@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_floating_point.hpp>
 #include <algorithm>
 #include "../types.h"
 #include "../movement.h"
@@ -81,4 +82,63 @@ TEST_CASE("cycle_selection: crosses from arm0 last seg to arm1") {
 
     REQUIRE(gs.level.active_arm == 1);
     REQUIRE(gs.level.arms[1].active_segment == 0);
+}
+
+static Arm make_simple_arm(SegmentType type, float initial_length = 50.0f) {
+    Arm arm;
+    arm.base_x = 0; arm.base_y = 0; arm.base_angle = 0;
+    arm.active_segment = 0;
+    arm.segments.push_back({type, 0.0f, initial_length});
+    return arm;
+}
+
+TEST_CASE("apply_movement: rotates PIVOT segment") {
+    Arm arm = make_simple_arm(SegmentType::PIVOT);
+    apply_movement(arm, 0.5f, 0.0f, 0.0f);
+    REQUIRE_THAT(arm.segments[0].angle, Catch::Matchers::WithinAbs(0.5f, 0.001f));
+}
+
+TEST_CASE("apply_movement: PIVOT ignores delta_extend") {
+    Arm arm = make_simple_arm(SegmentType::PIVOT);
+    apply_movement(arm, 0.0f, 20.0f, 0.0f);
+    REQUIRE_THAT(arm.segments[0].length, Catch::Matchers::WithinAbs(50.0f, 0.001f));
+}
+
+TEST_CASE("apply_movement: extends EXTEND segment") {
+    Arm arm = make_simple_arm(SegmentType::EXTEND);
+    apply_movement(arm, 0.0f, 10.0f, 0.0f);
+    REQUIRE_THAT(arm.segments[0].length, Catch::Matchers::WithinAbs(60.0f, 0.001f));
+}
+
+TEST_CASE("apply_movement: clamps length at MIN_SEG_LEN on retract") {
+    Arm arm = make_simple_arm(SegmentType::EXTEND, 12.0f);
+    apply_movement(arm, 0.0f, -100.0f, 0.0f);
+    REQUIRE_THAT(arm.segments[0].length, Catch::Matchers::WithinAbs(MIN_SEG_LEN, 0.001f));
+}
+
+TEST_CASE("apply_movement: BOTH responds to angle and length") {
+    Arm arm = make_simple_arm(SegmentType::BOTH);
+    apply_movement(arm, 1.0f, 5.0f, 0.0f);
+    REQUIRE_THAT(arm.segments[0].angle,  Catch::Matchers::WithinAbs(1.0f,  0.001f));
+    REQUIRE_THAT(arm.segments[0].length, Catch::Matchers::WithinAbs(55.0f, 0.001f));
+}
+
+TEST_CASE("apply_movement: base moves along horizontal track") {
+    Arm arm;
+    arm.base_x = 50.0f; arm.base_y = 0.0f; arm.base_angle = 0.0f;
+    arm.active_segment = -1;
+    arm.track = Track{0.0f, 200.0f, true};
+    arm.segments.push_back({SegmentType::PIVOT, 0.0f, 50.0f});
+    apply_movement(arm, 0.0f, 0.0f, 20.0f);
+    REQUIRE_THAT(arm.base_x, Catch::Matchers::WithinAbs(70.0f, 0.001f));
+}
+
+TEST_CASE("apply_movement: base clamps at track max") {
+    Arm arm;
+    arm.base_x = 190.0f; arm.base_y = 0.0f; arm.base_angle = 0.0f;
+    arm.active_segment = -1;
+    arm.track = Track{0.0f, 200.0f, true};
+    arm.segments.push_back({SegmentType::PIVOT, 0.0f, 50.0f});
+    apply_movement(arm, 0.0f, 0.0f, 50.0f);
+    REQUIRE_THAT(arm.base_x, Catch::Matchers::WithinAbs(200.0f, 0.001f));
 }

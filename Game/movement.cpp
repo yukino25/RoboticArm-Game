@@ -1,5 +1,6 @@
 // Game/movement.cpp
 #include "movement.h"
+#include <algorithm>
 
 void cycle_selection(GameState& gs, int direction) {
     Level& level = gs.level;
@@ -31,5 +32,27 @@ void cycle_selection(GameState& gs, int direction) {
         }
     } else {
         arm.active_segment = new_seg;
+    }
+}
+
+void apply_movement(Arm& arm, float delta_angle, float delta_extend, float delta_track) {
+    if (arm.active_segment == -1) {
+        if (!arm.track.has_value()) return;
+        const Track& t = arm.track.value();
+        if (t.horizontal) {
+            arm.base_x = std::clamp(arm.base_x + delta_track, t.min, t.max);
+        } else {
+            arm.base_y = std::clamp(arm.base_y + delta_track, t.min, t.max);
+        }
+        return;
+    }
+
+    Segment& seg = arm.segments[arm.active_segment];
+
+    if (seg.type == SegmentType::PIVOT || seg.type == SegmentType::BOTH) {
+        seg.angle += delta_angle;
+    }
+    if (seg.type == SegmentType::EXTEND || seg.type == SegmentType::BOTH) {
+        seg.length = std::max(MIN_SEG_LEN, seg.length + delta_extend);
     }
 }
