@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/nickschlosser/RoboticArm-Game/build/cmake_install.cmake",
+		"/Users/nickschlosser/RoboticArm-Game/build/SDL/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

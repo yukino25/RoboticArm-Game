@@ -1,0 +1,1794 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_assert.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_error.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_guid.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_hashtable.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_hints.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_list.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_log.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_properties.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_utils.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_assert_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_error_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_hashtable.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_hints_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_internal.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_list.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_log_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_properties_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/SDL_utils_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/atomic/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/atomic/SDL_atomic.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/atomic/SDL_spinlock.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/atomic/*.h",
+			"listDirectories" : true,
+			"paths" : []
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audio.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audiocvt.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audiodev.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audioqueue.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audioresample.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audiotypecvt.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_mixer.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_wave.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audio_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audio_channel_converters.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audiodev_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audioqueue.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_audioresample.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_sysaudio.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/SDL_wave.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/coreaudio/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/coreaudio/SDL_coreaudio.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/coreaudio/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/coreaudio/SDL_coreaudio.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/disk/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/disk/SDL_diskaudio.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/disk/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/disk/SDL_diskaudio.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/dummy/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/dummy/SDL_dummyaudio.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/dummy/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/audio/dummy/SDL_dummyaudio.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/SDL_camera.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/SDL_camera_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/SDL_syscamera.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/coremedia/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/coremedia/SDL_camera_coremedia.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/dummy/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/dummy/SDL_camera_dummy.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/camera/dummy/*.h",
+			"listDirectories" : true,
+			"paths" : []
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/core/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/core/SDL_core_unsupported.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/core/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/core/SDL_core_unsupported.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/cpuinfo/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/cpuinfo/SDL_cpuinfo.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/cpuinfo/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/cpuinfo/SDL_cpuinfo_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/SDL_dynapi.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/SDL_dynapi.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/SDL_dynapi_overrides.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/SDL_dynapi_procs.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/dynapi/SDL_dynapi_unsupported.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/events/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_categories.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_clipboardevents.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_displayevents.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_dropevents.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_events.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_eventwatch.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keyboard.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keymap.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keysym_to_keycode.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keysym_to_scancode.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_mouse.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_pen.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_quit.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_scancode_tables.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_touch.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_windowevents.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/imKStoUCS.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/events/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_categories_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_clipboardevents_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_displayevents_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_dropevents_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_events_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_eventwatch_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keyboard_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keymap_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keysym_to_keycode_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_keysym_to_scancode_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_mouse_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_pen_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_scancode_tables_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_touch_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/SDL_windowevents_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/blank_cursor.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/default_cursor.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/imKStoUCS.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/scancodes_darwin.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/scancodes_linux.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/scancodes_windows.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/events/scancodes_xfree86.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/SDL_filesystem.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/SDL_filesystem_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/SDL_sysfilesystem.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/cocoa/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/filesystem/cocoa/SDL_sysfilesystem.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/SDL_gpu.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/SDL_sysgpu.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/metal/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/metal/Metal_Blit.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/metal/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/metal/SDL_gpu_metal.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/vulkan/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/vulkan/SDL_gpu_vulkan.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/vulkan/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/vulkan/SDL_gpu_vulkan_vkfuncs.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/SDL_gpu_openxr.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/SDL_openxrdyn.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/SDL_gpu_openxr.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/SDL_openxr_internal.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/SDL_openxrdyn.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/gpu/xr/SDL_openxrsym.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/SDL_haptic.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/SDL_haptic_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/SDL_syshaptic.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/darwin/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/darwin/SDL_syshaptic.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/darwin/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/darwin/SDL_syshaptic_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/hidapi/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/hidapi/SDL_hidapihaptic.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_android.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_ios.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_libusb.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_linux.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_mac.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_netbsd.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_steamxbox.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/hidapi/SDL_hidapi_windows.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/io/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/io/SDL_asyncio.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/io/SDL_iostream.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/io/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/io/SDL_asyncio_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/io/SDL_iostream_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/io/SDL_sysasyncio.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/io/generic/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/io/generic/SDL_asyncio_generic.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/io/generic/*.h",
+			"listDirectories" : true,
+			"paths" : []
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_gamepad.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_joystick.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_steam_virtual_gamepad.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/controller_type.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_gamepad_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_gamepad_db.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_joystick_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_steam_virtual_gamepad.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/SDL_sysjoystick.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/controller_list.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/controller_type.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/usb_ids.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/apple/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/apple/SDL_mfijoystick_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/apple/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/apple/SDL_mfijoystick.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/darwin/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/darwin/SDL_iokitjoystick.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/darwin/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/darwin/SDL_iokitjoystick_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_8bitdo.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_combined.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_flydigi.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_gamecube.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_gamesir.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_gip.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_lg4ff.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_luna.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_ps3.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_ps4.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_ps5.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_rumble.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_shield.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_sinput.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_stadia.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_steam.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_steam_hori.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_steam_triton.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_steamdeck.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_switch.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_switch2.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_wii.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_xbox360.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_xbox360w.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_xboxone.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapi_zuiki.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_hidapijoystick.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/hidapi/SDL_report_descriptor.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/virtual/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/virtual/SDL_virtualjoystick.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/virtual/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/joystick/virtual/SDL_virtualjoystick_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/loadso/dlopen/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/loadso/dlopen/SDL_sysloadso.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/loadso/dlopen/*.h",
+			"listDirectories" : true,
+			"paths" : []
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/locale/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/locale/SDL_locale.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/locale/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/locale/SDL_syslocale.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/locale/macos/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/locale/macos/SDL_syslocale.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/main/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/main/SDL_main_callbacks.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/main/SDL_runapp.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/main/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/main/SDL_main_callbacks.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/main/generic/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/main/generic/SDL_sysmain_callbacks.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/main/generic/*.h",
+			"listDirectories" : true,
+			"paths" : []
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/SDL_libusb.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/SDL_url.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/SDL_libusb.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/SDL_sysurl.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/macos/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/misc/macos/SDL_sysurl.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/power/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/power/SDL_power.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/power/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/power/SDL_syspower.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/power/macos/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/power/macos/SDL_syspower.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/process/posix/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/process/posix/SDL_posixprocess.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/process/posix/*.h",
+			"listDirectories" : true,
+			"paths" : []
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/render/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_render.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_render_unsupported.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_yuv_sw.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/render/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_d3dmath.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_render_debug_font.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_sysrender.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/SDL_yuv_sw_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/render/*/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/SDL_render_d3d.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/SDL_shaders_d3d.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/SDL_render_d3d11.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/SDL_shaders_d3d11.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/SDL_render_d3d12.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/SDL_shaders_d3d12.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/gpu/SDL_pipeline_gpu.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/gpu/SDL_render_gpu.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/gpu/SDL_shaders_gpu.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/ngage/SDL_render_ngage.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengl/SDL_render_gl.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengl/SDL_shaders_gl.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengles2/SDL_render_gles2.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengles2/SDL_shaders_gles2.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/ps2/SDL_render_ps2.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/psp/SDL_render_psp.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_blendfillrect.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_blendline.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_blendpoint.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_drawline.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_drawpoint.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_render_sw.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_triangle.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm_memory.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm_tools.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/SDL_render_vulkan.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/SDL_shaders_vulkan.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/render/*/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/D3D9_PixelShader_Palette.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/D3D9_PixelShader_Palette_Linear.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/D3D9_PixelShader_Palette_Nearest.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/D3D9_PixelShader_YUV.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d/SDL_shaders_d3d.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/D3D11_PixelShader_Advanced.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/D3D11_PixelShader_Colors.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/D3D11_PixelShader_Textures.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/D3D11_VertexShader.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d11/SDL_shaders_d3d11.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_PixelShader_Advanced.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_PixelShader_Colors.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_PixelShader_Textures.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_RootSig_Advanced.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_RootSig_Color.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_RootSig_Texture.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_VertexShader_Advanced.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_VertexShader_Color.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/D3D12_VertexShader_Texture.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/SDL_render_d3d12_xbox.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/direct3d12/SDL_shaders_d3d12.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/gpu/SDL_gpu_util.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/gpu/SDL_pipeline_gpu.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/gpu/SDL_shaders_gpu.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_ios.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_iphonesimulator.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_macos.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_tvos.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_tvsimulator.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/ngage/SDL_render_ngage_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengl/SDL_glfuncs.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengl/SDL_shaders_gl.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengles2/SDL_gles2funcs.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/opengles2/SDL_shaders_gles2.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/psp/SDL_render_psp_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_blendfillrect.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_blendline.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_blendpoint.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_draw.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_drawline.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_drawpoint.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_render_sw_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/software/SDL_triangle.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm_memory.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm_shaders.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm_tools.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vitagxm/SDL_render_vita_gxm_types.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/SDL_shaders_vulkan.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/VULKAN_PixelShader_Advanced.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/VULKAN_PixelShader_Colors.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/VULKAN_PixelShader_Textures.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/vulkan/VULKAN_VertexShader.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_ios.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_iphonesimulator.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_macos.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_tvos.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_shaders_metal_tvsimulator.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/render/metal/SDL_render_metal.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/SDL_sensor.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/SDL_sensor_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/SDL_syssensor.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/dummy/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/dummy/SDL_dummysensor.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/dummy/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/sensor/dummy/SDL_dummysensor.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_crc16.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_crc32.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_getenv.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_iconv.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_malloc.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_memcpy.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_memmove.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_memset.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_mslibc.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_murmur3.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_qsort.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_random.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_stdlib.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_string.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_strtokr.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_casefolding.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_getenv_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_sysstdlib.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/stdlib/SDL_vacopy.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/SDL_storage.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/SDL_sysstorage.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/generic/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/generic/SDL_genericstorage.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/steam/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/steam/SDL_steamstorage.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/steam/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/storage/steam/SDL_steamstorage_proc.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/thread/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/thread/SDL_thread.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/thread/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/thread/SDL_systhread.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/thread/SDL_thread_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/time/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/time/SDL_time.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/time/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/time/SDL_time_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/time/unix/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/time/unix/SDL_systime.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/timer/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/timer/SDL_timer.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/timer/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/timer/SDL_timer_c.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/timer/unix/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/timer/unix/SDL_systimer.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/tray/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/tray/SDL_tray_utils.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/tray/cocoa/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/tray/cocoa/SDL_tray.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_RLEaccel.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_0.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_1.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_A.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_N.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_auto.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_copy.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_slow.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_bmp.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_clipboard.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_egl.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_fillrect.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_pixels.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_rect.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_rotate.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_stb.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_stretch.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_surface.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_video.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_video_unsupported.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_vulkan_utils.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_yuv.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_RLEaccel_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_auto.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_copy.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_blit_slow.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_clipboard_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_egl_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_pixels_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_rect_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_rect_impl.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_rotate.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_stb_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_surface_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_sysvideo.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_video_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_video_unsupported.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_vulkan_internal.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/SDL_yuv_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/miniz.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/stb_image.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/*.m",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoaclipboard.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoaevents.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoakeyboard.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoamessagebox.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoametalview.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoamodes.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoamouse.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoaopengl.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoaopengles.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoapen.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoashape.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoavideo.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoavulkan.m",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/cocoa/SDL_cocoawindow.m"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/SDL_nullevents.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/SDL_nullframebuffer.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/SDL_nullvideo.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/SDL_nullevents_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/SDL_nullframebuffer_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/dummy/SDL_nullvideo.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenevents.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenframebuffer.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenopengles.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenvideo.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenvulkan.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenwindow.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenevents_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenframebuffer_c.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenopengles.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenvideo.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenvulkan.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/offscreen/SDL_offscreenwindow.h"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/*.c",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_lsx.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_sse.c",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_std.c"
+			]
+		},
+		{
+			"expression" : "/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/*.h",
+			"listDirectories" : true,
+			"paths" : 
+			[
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_common.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_internal.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_lsx.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_lsx_func.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_sse.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_sse_func.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_std.h",
+				"/Users/nickschlosser/RoboticArm-Game/SDL/src/video/yuv2rgb/yuv_rgb_std_func.h"
+			]
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.1/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.1/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
+		},
+		{
+			"path" : "SDL/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckLanguage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCSourceRuns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceRuns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckStructHasMember.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "SDL/cmake/macros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckOBJCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.1/CMakeOBJCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeOBJCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-OBJC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-OBJC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CheckLinkerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckLinkerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+		},
+		{
+			"path" : "SDL/cmake/sdlchecks.cmake"
+		},
+		{
+			"path" : "SDL/cmake/sdlcommands.cmake"
+		},
+		{
+			"path" : "SDL/cmake/sdlcompilers.cmake"
+		},
+		{
+			"path" : "SDL/cmake/sdlcpu.cmake"
+		},
+		{
+			"path" : "SDL/cmake/sdlmanpages.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"path" : "SDL/cmake/sdlplatform.cmake"
+		},
+		{
+			"path" : "SDL/cmake/GetGitRevisionDescription.cmake"
+		},
+		{
+			"path" : "SDL/cmake/3rdparty.cmake"
+		},
+		{
+			"path" : "SDL/cmake/PreseedMSVCCache.cmake"
+		},
+		{
+			"path" : "SDL/cmake/PreseedEmscriptenCache.cmake"
+		},
+		{
+			"path" : "SDL/cmake/PreseedNokiaNGageCache.cmake"
+		},
+		{
+			"path" : "SDL/cmake/FindLibUSB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "SDL/include/build_config/SDL_build_config.h.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindGit.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "SDL/.git/HEAD"
+		},
+		{
+			"path" : "SDL/cmake/GetGitRevisionDescription.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/SDL/CMakeFiles/git-data/grabRef.cmake"
+		},
+		{
+			"path" : "SDL/.git/refs/heads/main"
+		},
+		{
+			"path" : "SDL/include/build_config/SDL_revision.h.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake"
+		},
+		{
+			"path" : "SDL/cmake/SDL3Config.cmake.in"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/SDL/CMakeFiles/SDL_build_config.h.intermediate"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/Users/nickschlosser/RoboticArm-Game/build",
+		"source" : "/Users/nickschlosser/RoboticArm-Game"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

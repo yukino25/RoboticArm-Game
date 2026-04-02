@@ -1,0 +1,3132 @@
+{
+	"abstract" : true,
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include"
+		],
+		"files" : 
+		[
+			"SDL/cmake/sdlcommands.cmake",
+			"SDL/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 71,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 2
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "SDL3-collector::@e7c329919722962a2ad4",
+	"interfaceSources" : 
+	[
+		{
+			"path" : "SDL/src/SDL.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_assert.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_assert_c.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_error.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_error_c.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_guid.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_hashtable.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_hashtable.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_hints.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_hints_c.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_internal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_list.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_list.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_log.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_log_c.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_properties.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_properties_c.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/SDL_utils_c.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "SDL/src/atomic/SDL_atomic.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"path" : "SDL/src/atomic/SDL_spinlock.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audio.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audio_c.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audio_channel_converters.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audiocvt.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audiodev.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audiodev_c.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audioqueue.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audioqueue.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audioresample.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audioresample.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_audiotypecvt.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_mixer.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_sysaudio.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_wave.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/audio/SDL_wave.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"path" : "SDL/src/camera/SDL_camera.c",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"path" : "SDL/src/camera/SDL_camera_c.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"path" : "SDL/src/camera/SDL_syscamera.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"path" : "SDL/src/core/SDL_core_unsupported.c",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"path" : "SDL/src/core/SDL_core_unsupported.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"path" : "SDL/src/cpuinfo/SDL_cpuinfo.c",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"path" : "SDL/src/cpuinfo/SDL_cpuinfo_c.h",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"path" : "SDL/src/dynapi/SDL_dynapi.c",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"path" : "SDL/src/dynapi/SDL_dynapi.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"path" : "SDL/src/dynapi/SDL_dynapi_overrides.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"path" : "SDL/src/dynapi/SDL_dynapi_procs.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"path" : "SDL/src/dynapi/SDL_dynapi_unsupported.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"path" : "SDL/src/events/SDL_categories.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_categories_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_clipboardevents.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_clipboardevents_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_displayevents.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_displayevents_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_dropevents.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_dropevents_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_events.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_events_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_eventwatch.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_eventwatch_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keyboard.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keyboard_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keymap.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keymap_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keysym_to_keycode.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keysym_to_keycode_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keysym_to_scancode.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_keysym_to_scancode_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_mouse.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_mouse_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_pen.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_pen_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_quit.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_scancode_tables.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_scancode_tables_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_touch.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_touch_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_windowevents.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/SDL_windowevents_c.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/blank_cursor.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/default_cursor.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/imKStoUCS.c",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/imKStoUCS.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/scancodes_darwin.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/scancodes_linux.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/scancodes_windows.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/events/scancodes_xfree86.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"path" : "SDL/src/filesystem/SDL_filesystem.c",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"path" : "SDL/src/filesystem/SDL_filesystem_c.h",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"path" : "SDL/src/filesystem/SDL_sysfilesystem.h",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"path" : "SDL/src/gpu/SDL_gpu.c",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"path" : "SDL/src/gpu/SDL_sysgpu.h",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"path" : "SDL/src/gpu/xr/SDL_gpu_openxr.c",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"path" : "SDL/src/gpu/xr/SDL_gpu_openxr.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"path" : "SDL/src/gpu/xr/SDL_openxr_internal.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"path" : "SDL/src/gpu/xr/SDL_openxrdyn.c",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"path" : "SDL/src/gpu/xr/SDL_openxrdyn.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"path" : "SDL/src/gpu/xr/SDL_openxrsym.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"path" : "SDL/src/haptic/SDL_haptic.c",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"path" : "SDL/src/haptic/SDL_haptic_c.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"path" : "SDL/src/haptic/SDL_syshaptic.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi.c",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_android.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_c.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_ios.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_libusb.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_linux.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_mac.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_netbsd.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_steamxbox.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/hidapi/SDL_hidapi_windows.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"path" : "SDL/src/io/SDL_asyncio.c",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"path" : "SDL/src/io/SDL_asyncio_c.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"path" : "SDL/src/io/SDL_iostream.c",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"path" : "SDL/src/io/SDL_iostream_c.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"path" : "SDL/src/io/SDL_sysasyncio.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"path" : "SDL/src/io/generic/SDL_asyncio_generic.c",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_gamepad.c",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_gamepad_c.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_gamepad_db.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_joystick.c",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_joystick_c.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_steam_virtual_gamepad.c",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_steam_virtual_gamepad.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/SDL_sysjoystick.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/controller_list.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/controller_type.c",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/controller_type.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/joystick/usb_ids.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"path" : "SDL/src/locale/SDL_locale.c",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"path" : "SDL/src/locale/SDL_syslocale.h",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"path" : "SDL/src/main/SDL_main_callbacks.c",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"path" : "SDL/src/main/SDL_main_callbacks.h",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"path" : "SDL/src/main/SDL_runapp.c",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"path" : "SDL/src/misc/SDL_libusb.c",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"path" : "SDL/src/misc/SDL_libusb.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"path" : "SDL/src/misc/SDL_sysurl.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"path" : "SDL/src/misc/SDL_url.c",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"path" : "SDL/src/power/SDL_power.c",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"path" : "SDL/src/power/SDL_syspower.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"path" : "SDL/src/render/SDL_d3dmath.h",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/SDL_render.c",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/SDL_render_debug_font.h",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/SDL_render_unsupported.c",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/SDL_sysrender.h",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/SDL_yuv_sw.c",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/SDL_yuv_sw_c.h",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"path" : "SDL/src/render/direct3d/D3D9_PixelShader_Palette.h",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d/D3D9_PixelShader_Palette_Linear.h",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d/D3D9_PixelShader_Palette_Nearest.h",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d/D3D9_PixelShader_YUV.h",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d/SDL_render_d3d.c",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d/SDL_shaders_d3d.c",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d/SDL_shaders_d3d.h",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/D3D11_PixelShader_Advanced.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/D3D11_PixelShader_Colors.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/D3D11_PixelShader_Textures.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/D3D11_VertexShader.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/SDL_render_d3d11.c",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/SDL_shaders_d3d11.c",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d11/SDL_shaders_d3d11.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_PixelShader_Advanced.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_PixelShader_Colors.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_PixelShader_Textures.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_RootSig_Advanced.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_RootSig_Color.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_RootSig_Texture.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_VertexShader_Advanced.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_VertexShader_Color.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/D3D12_VertexShader_Texture.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/SDL_render_d3d12.c",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/SDL_render_d3d12_xbox.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/SDL_shaders_d3d12.c",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/direct3d12/SDL_shaders_d3d12.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"path" : "SDL/src/render/gpu/SDL_gpu_util.h",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"path" : "SDL/src/render/gpu/SDL_pipeline_gpu.c",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"path" : "SDL/src/render/gpu/SDL_pipeline_gpu.h",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"path" : "SDL/src/render/gpu/SDL_render_gpu.c",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"path" : "SDL/src/render/gpu/SDL_shaders_gpu.c",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"path" : "SDL/src/render/gpu/SDL_shaders_gpu.h",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_ios.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_iphonesimulator.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_macos.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_tvos.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_tvsimulator.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/ngage/SDL_render_ngage.c",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"path" : "SDL/src/render/ngage/SDL_render_ngage_c.h",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"path" : "SDL/src/render/opengl/SDL_glfuncs.h",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"path" : "SDL/src/render/opengl/SDL_render_gl.c",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"path" : "SDL/src/render/opengl/SDL_shaders_gl.c",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"path" : "SDL/src/render/opengl/SDL_shaders_gl.h",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"path" : "SDL/src/render/opengles2/SDL_gles2funcs.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"path" : "SDL/src/render/opengles2/SDL_render_gles2.c",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"path" : "SDL/src/render/opengles2/SDL_shaders_gles2.c",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"path" : "SDL/src/render/opengles2/SDL_shaders_gles2.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"path" : "SDL/src/render/ps2/SDL_render_ps2.c",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"path" : "SDL/src/render/psp/SDL_render_psp.c",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"path" : "SDL/src/render/psp/SDL_render_psp_c.h",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_blendfillrect.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_blendfillrect.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_blendline.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_blendline.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_blendpoint.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_blendpoint.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_draw.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_drawline.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_drawline.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_drawpoint.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_drawpoint.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_render_sw.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_render_sw_c.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_triangle.c",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/software/SDL_triangle.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm.c",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm_memory.c",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm_memory.h",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm_shaders.h",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm_tools.c",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm_tools.h",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vitagxm/SDL_render_vita_gxm_types.h",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"path" : "SDL/src/render/vulkan/SDL_render_vulkan.c",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/render/vulkan/SDL_shaders_vulkan.c",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/render/vulkan/SDL_shaders_vulkan.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/render/vulkan/VULKAN_PixelShader_Advanced.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/render/vulkan/VULKAN_PixelShader_Colors.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/render/vulkan/VULKAN_PixelShader_Textures.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/render/vulkan/VULKAN_VertexShader.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"path" : "SDL/src/sensor/SDL_sensor.c",
+			"sourceGroupIndex" : 34
+		},
+		{
+			"path" : "SDL/src/sensor/SDL_sensor_c.h",
+			"sourceGroupIndex" : 34
+		},
+		{
+			"path" : "SDL/src/sensor/SDL_syssensor.h",
+			"sourceGroupIndex" : 34
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_casefolding.h",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_crc16.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_crc32.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_getenv.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_getenv_c.h",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_iconv.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_malloc.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_memcpy.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_memmove.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_memset.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_mslibc.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_murmur3.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_qsort.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_random.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_stdlib.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_string.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_strtokr.c",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_sysstdlib.h",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/stdlib/SDL_vacopy.h",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"path" : "SDL/src/storage/SDL_storage.c",
+			"sourceGroupIndex" : 36
+		},
+		{
+			"path" : "SDL/src/storage/SDL_sysstorage.h",
+			"sourceGroupIndex" : 36
+		},
+		{
+			"path" : "SDL/src/thread/SDL_systhread.h",
+			"sourceGroupIndex" : 37
+		},
+		{
+			"path" : "SDL/src/thread/SDL_thread.c",
+			"sourceGroupIndex" : 37
+		},
+		{
+			"path" : "SDL/src/thread/SDL_thread_c.h",
+			"sourceGroupIndex" : 37
+		},
+		{
+			"path" : "SDL/src/time/SDL_time.c",
+			"sourceGroupIndex" : 38
+		},
+		{
+			"path" : "SDL/src/time/SDL_time_c.h",
+			"sourceGroupIndex" : 38
+		},
+		{
+			"path" : "SDL/src/timer/SDL_timer.c",
+			"sourceGroupIndex" : 39
+		},
+		{
+			"path" : "SDL/src/timer/SDL_timer_c.h",
+			"sourceGroupIndex" : 39
+		},
+		{
+			"path" : "SDL/src/video/SDL_RLEaccel.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_RLEaccel_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_0.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_1.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_A.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_N.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_auto.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_auto.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_copy.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_copy.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_slow.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_blit_slow.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_bmp.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_clipboard.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_clipboard_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_egl.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_egl_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_fillrect.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_pixels.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_pixels_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_rect.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_rect_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_rect_impl.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_rotate.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_rotate.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_stb.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_stb_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_stretch.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_surface.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_surface_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_sysvideo.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_video.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_video_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_video_unsupported.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_video_unsupported.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_vulkan_internal.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_vulkan_utils.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_yuv.c",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/SDL_yuv_c.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/miniz.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/stb_image.h",
+			"sourceGroupIndex" : 40
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_common.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_internal.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_lsx.c",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_lsx.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_lsx_func.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_sse.c",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_sse.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_sse_func.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_std.c",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_std.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/video/yuv2rgb/yuv_rgb_std_func.h",
+			"sourceGroupIndex" : 41
+		},
+		{
+			"path" : "SDL/src/audio/dummy/SDL_dummyaudio.c",
+			"sourceGroupIndex" : 42
+		},
+		{
+			"path" : "SDL/src/audio/dummy/SDL_dummyaudio.h",
+			"sourceGroupIndex" : 42
+		},
+		{
+			"path" : "SDL/src/audio/disk/SDL_diskaudio.c",
+			"sourceGroupIndex" : 43
+		},
+		{
+			"path" : "SDL/src/audio/disk/SDL_diskaudio.h",
+			"sourceGroupIndex" : 43
+		},
+		{
+			"path" : "SDL/src/camera/dummy/SDL_camera_dummy.c",
+			"sourceGroupIndex" : 44
+		},
+		{
+			"path" : "SDL/src/loadso/dlopen/SDL_sysloadso.c",
+			"sourceGroupIndex" : 45
+		},
+		{
+			"path" : "SDL/src/joystick/virtual/SDL_virtualjoystick.c",
+			"sourceGroupIndex" : 46
+		},
+		{
+			"path" : "SDL/src/joystick/virtual/SDL_virtualjoystick_c.h",
+			"sourceGroupIndex" : 46
+		},
+		{
+			"path" : "SDL/src/video/dummy/SDL_nullevents.c",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"path" : "SDL/src/video/dummy/SDL_nullevents_c.h",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"path" : "SDL/src/video/dummy/SDL_nullframebuffer.c",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"path" : "SDL/src/video/dummy/SDL_nullframebuffer_c.h",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"path" : "SDL/src/video/dummy/SDL_nullvideo.c",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"path" : "SDL/src/video/dummy/SDL_nullvideo.h",
+			"sourceGroupIndex" : 47
+		},
+		{
+			"path" : "SDL/src/camera/coremedia/SDL_camera_coremedia.m",
+			"sourceGroupIndex" : 48
+		},
+		{
+			"path" : "SDL/src/misc/macos/SDL_sysurl.m",
+			"sourceGroupIndex" : 49
+		},
+		{
+			"path" : "SDL/src/audio/coreaudio/SDL_coreaudio.h",
+			"sourceGroupIndex" : 50
+		},
+		{
+			"path" : "SDL/src/audio/coreaudio/SDL_coreaudio.m",
+			"sourceGroupIndex" : 50
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_8bitdo.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_combined.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_flydigi.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_gamecube.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_gamesir.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_gip.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_lg4ff.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_luna.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_ps3.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_ps4.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_ps5.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_rumble.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_shield.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_sinput.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_stadia.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_steam.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_steam_hori.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_steam_triton.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_steamdeck.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_switch.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_switch2.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_wii.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_xbox360.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_xbox360w.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_xboxone.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapi_zuiki.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_hidapijoystick.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/joystick/hidapi/SDL_report_descriptor.c",
+			"sourceGroupIndex" : 51
+		},
+		{
+			"path" : "SDL/src/haptic/hidapi/SDL_hidapihaptic.c",
+			"sourceGroupIndex" : 52
+		},
+		{
+			"path" : "SDL/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c",
+			"sourceGroupIndex" : 52
+		},
+		{
+			"path" : "SDL/src/joystick/apple/SDL_mfijoystick.m",
+			"sourceGroupIndex" : 53
+		},
+		{
+			"path" : "SDL/src/joystick/apple/SDL_mfijoystick_c.h",
+			"sourceGroupIndex" : 53
+		},
+		{
+			"path" : "SDL/src/joystick/darwin/SDL_iokitjoystick.c",
+			"sourceGroupIndex" : 54
+		},
+		{
+			"path" : "SDL/src/joystick/darwin/SDL_iokitjoystick_c.h",
+			"sourceGroupIndex" : 54
+		},
+		{
+			"path" : "SDL/src/haptic/darwin/SDL_syshaptic.c",
+			"sourceGroupIndex" : 55
+		},
+		{
+			"path" : "SDL/src/haptic/darwin/SDL_syshaptic_c.h",
+			"sourceGroupIndex" : 55
+		},
+		{
+			"path" : "SDL/src/power/macos/SDL_syspower.c",
+			"sourceGroupIndex" : 56
+		},
+		{
+			"path" : "SDL/src/locale/macos/SDL_syslocale.m",
+			"sourceGroupIndex" : 57
+		},
+		{
+			"path" : "SDL/src/time/unix/SDL_systime.c",
+			"sourceGroupIndex" : 58
+		},
+		{
+			"path" : "SDL/src/timer/unix/SDL_systimer.c",
+			"sourceGroupIndex" : 59
+		},
+		{
+			"path" : "SDL/src/filesystem/cocoa/SDL_sysfilesystem.m",
+			"sourceGroupIndex" : 60
+		},
+		{
+			"path" : "SDL/src/storage/generic/SDL_genericstorage.c",
+			"sourceGroupIndex" : 61
+		},
+		{
+			"path" : "SDL/src/storage/steam/SDL_steamstorage.c",
+			"sourceGroupIndex" : 62
+		},
+		{
+			"path" : "SDL/src/storage/steam/SDL_steamstorage_proc.h",
+			"sourceGroupIndex" : 62
+		},
+		{
+			"path" : "SDL/src/filesystem/posix/SDL_sysfsops.c",
+			"sourceGroupIndex" : 63
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoaclipboard.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoaevents.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoakeyboard.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoamessagebox.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoametalview.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoamodes.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoamouse.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoaopengl.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoaopengles.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoapen.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoashape.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoavideo.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoavulkan.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/video/cocoa/SDL_cocoawindow.m",
+			"sourceGroupIndex" : 64
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_render_metal.m",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_ios.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_iphonesimulator.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_macos.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_tvos.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/render/metal/SDL_shaders_metal_tvsimulator.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"path" : "SDL/src/tray/cocoa/SDL_tray.m",
+			"sourceGroupIndex" : 65
+		},
+		{
+			"path" : "SDL/src/thread/pthread/SDL_systhread.c",
+			"sourceGroupIndex" : 66
+		},
+		{
+			"path" : "SDL/src/thread/pthread/SDL_sysmutex.c",
+			"sourceGroupIndex" : 66
+		},
+		{
+			"path" : "SDL/src/thread/pthread/SDL_syscond.c",
+			"sourceGroupIndex" : 66
+		},
+		{
+			"path" : "SDL/src/thread/pthread/SDL_sysrwlock.c",
+			"sourceGroupIndex" : 66
+		},
+		{
+			"path" : "SDL/src/thread/pthread/SDL_systls.c",
+			"sourceGroupIndex" : 66
+		},
+		{
+			"path" : "SDL/src/thread/pthread/SDL_syssem.c",
+			"sourceGroupIndex" : 66
+		},
+		{
+			"path" : "SDL/src/dialog/SDL_dialog.c",
+			"sourceGroupIndex" : 67
+		},
+		{
+			"path" : "SDL/src/dialog/SDL_dialog_utils.c",
+			"sourceGroupIndex" : 67
+		},
+		{
+			"path" : "SDL/src/dialog/cocoa/SDL_cocoadialog.m",
+			"sourceGroupIndex" : 68
+		},
+		{
+			"path" : "SDL/src/process/SDL_process.c",
+			"sourceGroupIndex" : 69
+		},
+		{
+			"path" : "SDL/src/process/posix/SDL_posixprocess.c",
+			"sourceGroupIndex" : 70
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenevents.c",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenevents_c.h",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenframebuffer.c",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenframebuffer_c.h",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenopengles.c",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenopengles.h",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenvideo.c",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenvideo.h",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenvulkan.c",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenvulkan.h",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenwindow.c",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/video/offscreen/SDL_offscreenwindow.h",
+			"sourceGroupIndex" : 71
+		},
+		{
+			"path" : "SDL/src/tray/SDL_tray_utils.c",
+			"sourceGroupIndex" : 72
+		},
+		{
+			"path" : "SDL/src/gpu/vulkan/SDL_gpu_vulkan.c",
+			"sourceGroupIndex" : 73
+		},
+		{
+			"path" : "SDL/src/gpu/vulkan/SDL_gpu_vulkan_vkfuncs.h",
+			"sourceGroupIndex" : 73
+		},
+		{
+			"path" : "SDL/src/gpu/metal/Metal_Blit.h",
+			"sourceGroupIndex" : 74
+		},
+		{
+			"path" : "SDL/src/gpu/metal/SDL_gpu_metal.m",
+			"sourceGroupIndex" : 74
+		},
+		{
+			"path" : "SDL/src/sensor/dummy/SDL_dummysensor.c",
+			"sourceGroupIndex" : 75
+		},
+		{
+			"path" : "SDL/src/sensor/dummy/SDL_dummysensor.h",
+			"sourceGroupIndex" : 75
+		},
+		{
+			"path" : "SDL/src/main/generic/SDL_sysmain_callbacks.c",
+			"sourceGroupIndex" : 76
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_assert.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_asyncio.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_atomic.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_audio.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_begin_code.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_bits.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_blendmode.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_camera.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_clipboard.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_close_code.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_copying.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_cpuinfo.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_dialog.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_dlopennote.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_egl.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_endian.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_error.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_events.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_filesystem.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_gamepad.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_gpu.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_guid.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_haptic.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_hidapi.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_hints.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_init.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_intrin.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_iostream.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_joystick.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_keyboard.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_keycode.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_loadso.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_locale.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_log.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_main.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_main_impl.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_messagebox.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_metal.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_misc.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_mouse.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_mutex.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_oldnames.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengl.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengl_glext.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengles.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengles2.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengles2_gl2.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengles2_gl2ext.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengles2_gl2platform.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_opengles2_khrplatform.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_openxr.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_pen.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_pixels.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_platform.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_platform_defines.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_power.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_process.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_properties.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_rect.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_render.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_scancode.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_sensor.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_stdinc.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_storage.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_surface.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_system.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_thread.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_time.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_timer.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_touch.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_tray.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_version.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_video.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "SDL/include/SDL3/SDL_vulkan.h",
+			"sourceGroupIndex" : 77
+		},
+		{
+			"path" : "build/SDL/include-revision/SDL3/SDL_revision.h",
+			"sourceGroupIndex" : 78
+		}
+	],
+	"name" : "SDL3-collector",
+	"paths" : 
+	{
+		"build" : "SDL",
+		"source" : "SDL"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"interfaceSourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18
+			],
+			"name" : "src",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				19,
+				20
+			],
+			"name" : "src\\atomic",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35
+			],
+			"name" : "src\\audio",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				36,
+				37,
+				38
+			],
+			"name" : "src\\camera",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				39,
+				40
+			],
+			"name" : "src\\core",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				41,
+				42
+			],
+			"name" : "src\\cpuinfo",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				43,
+				44,
+				45,
+				46,
+				47
+			],
+			"name" : "src\\dynapi",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86
+			],
+			"name" : "src\\events",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				87,
+				88,
+				89
+			],
+			"name" : "src\\filesystem",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				90,
+				91
+			],
+			"name" : "src\\gpu",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				92,
+				93,
+				94,
+				95,
+				96,
+				97
+			],
+			"name" : "src\\gpu\\xr",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				98,
+				99,
+				100
+			],
+			"name" : "src\\haptic",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110
+			],
+			"name" : "src\\hidapi",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				111,
+				112,
+				113,
+				114,
+				115
+			],
+			"name" : "src\\io",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				116
+			],
+			"name" : "src\\io\\generic",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128
+			],
+			"name" : "src\\joystick",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				129,
+				130
+			],
+			"name" : "src\\locale",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				131,
+				132,
+				133
+			],
+			"name" : "src\\main",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				134,
+				135,
+				136,
+				137
+			],
+			"name" : "src\\misc",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				138,
+				139
+			],
+			"name" : "src\\power",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146
+			],
+			"name" : "src\\render",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153
+			],
+			"name" : "src\\render\\direct3d",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160
+			],
+			"name" : "src\\render\\direct3d11",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				161,
+				162,
+				163,
+				164,
+				165,
+				166,
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173
+			],
+			"name" : "src\\render\\direct3d12",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				174,
+				175,
+				176,
+				177,
+				178,
+				179
+			],
+			"name" : "src\\render\\gpu",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				180,
+				181,
+				182,
+				183,
+				184,
+				390,
+				391,
+				392,
+				393,
+				394,
+				395
+			],
+			"name" : "src\\render\\metal",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				185,
+				186
+			],
+			"name" : "src\\render\\ngage",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				187,
+				188,
+				189,
+				190
+			],
+			"name" : "src\\render\\opengl",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				191,
+				192,
+				193,
+				194
+			],
+			"name" : "src\\render\\opengles2",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				195
+			],
+			"name" : "src\\render\\ps2",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				196,
+				197
+			],
+			"name" : "src\\render\\psp",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				198,
+				199,
+				200,
+				201,
+				202,
+				203,
+				204,
+				205,
+				206,
+				207,
+				208,
+				209,
+				210,
+				211,
+				212
+			],
+			"name" : "src\\render\\software",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				213,
+				214,
+				215,
+				216,
+				217,
+				218,
+				219
+			],
+			"name" : "src\\render\\vitagxm",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				220,
+				221,
+				222,
+				223,
+				224,
+				225,
+				226
+			],
+			"name" : "src\\render\\vulkan",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				227,
+				228,
+				229
+			],
+			"name" : "src\\sensor",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				230,
+				231,
+				232,
+				233,
+				234,
+				235,
+				236,
+				237,
+				238,
+				239,
+				240,
+				241,
+				242,
+				243,
+				244,
+				245,
+				246,
+				247,
+				248
+			],
+			"name" : "src\\stdlib",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				249,
+				250
+			],
+			"name" : "src\\storage",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				251,
+				252,
+				253
+			],
+			"name" : "src\\thread",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				254,
+				255
+			],
+			"name" : "src\\time",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				256,
+				257
+			],
+			"name" : "src\\timer",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				258,
+				259,
+				260,
+				261,
+				262,
+				263,
+				264,
+				265,
+				266,
+				267,
+				268,
+				269,
+				270,
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278,
+				279,
+				280,
+				281,
+				282,
+				283,
+				284,
+				285,
+				286,
+				287,
+				288,
+				289,
+				290,
+				291,
+				292,
+				293,
+				294,
+				295,
+				296,
+				297,
+				298,
+				299,
+				300
+			],
+			"name" : "src\\video",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				301,
+				302,
+				303,
+				304,
+				305,
+				306,
+				307,
+				308,
+				309,
+				310,
+				311,
+				312
+			],
+			"name" : "src\\video\\yuv2rgb",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				313,
+				314
+			],
+			"name" : "src\\audio\\dummy",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				315,
+				316
+			],
+			"name" : "src\\audio\\disk",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				317
+			],
+			"name" : "src\\camera\\dummy",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				318
+			],
+			"name" : "src\\loadso\\dlopen",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				319,
+				320
+			],
+			"name" : "src\\joystick\\virtual",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				321,
+				322,
+				323,
+				324,
+				325,
+				326
+			],
+			"name" : "src\\video\\dummy",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				327
+			],
+			"name" : "src\\camera\\coremedia",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				328
+			],
+			"name" : "src\\misc\\macos",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				329,
+				330
+			],
+			"name" : "src\\audio\\coreaudio",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				331,
+				332,
+				333,
+				334,
+				335,
+				336,
+				337,
+				338,
+				339,
+				340,
+				341,
+				342,
+				343,
+				344,
+				345,
+				346,
+				347,
+				348,
+				349,
+				350,
+				351,
+				352,
+				353,
+				354,
+				355,
+				356,
+				357,
+				358
+			],
+			"name" : "src\\joystick\\hidapi",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				359,
+				360
+			],
+			"name" : "src\\haptic\\hidapi",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				361,
+				362
+			],
+			"name" : "src\\joystick\\apple",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				363,
+				364
+			],
+			"name" : "src\\joystick\\darwin",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				365,
+				366
+			],
+			"name" : "src\\haptic\\darwin",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				367
+			],
+			"name" : "src\\power\\macos",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				368
+			],
+			"name" : "src\\locale\\macos",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				369
+			],
+			"name" : "src\\time\\unix",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				370
+			],
+			"name" : "src\\timer\\unix",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				371
+			],
+			"name" : "src\\filesystem\\cocoa",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				372
+			],
+			"name" : "src\\storage\\generic",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				373,
+				374
+			],
+			"name" : "src\\storage\\steam",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				375
+			],
+			"name" : "src\\filesystem\\posix",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				376,
+				377,
+				378,
+				379,
+				380,
+				381,
+				382,
+				383,
+				384,
+				385,
+				386,
+				387,
+				388,
+				389
+			],
+			"name" : "src\\video\\cocoa",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				396
+			],
+			"name" : "src\\tray\\cocoa",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				397,
+				398,
+				399,
+				400,
+				401,
+				402
+			],
+			"name" : "src\\thread\\pthread",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				403,
+				404
+			],
+			"name" : "src\\dialog",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				405
+			],
+			"name" : "src\\dialog\\cocoa",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				406
+			],
+			"name" : "src\\process",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				407
+			],
+			"name" : "src\\process\\posix",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				408,
+				409,
+				410,
+				411,
+				412,
+				413,
+				414,
+				415,
+				416,
+				417,
+				418,
+				419
+			],
+			"name" : "src\\video\\offscreen",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				420
+			],
+			"name" : "src\\tray",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				421,
+				422
+			],
+			"name" : "src\\gpu\\vulkan",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				423,
+				424
+			],
+			"name" : "src\\gpu\\metal",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				425,
+				426
+			],
+			"name" : "src\\sensor\\dummy",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				427
+			],
+			"name" : "src\\main\\generic",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				428,
+				429,
+				430,
+				431,
+				432,
+				433,
+				434,
+				435,
+				436,
+				437,
+				438,
+				439,
+				440,
+				441,
+				442,
+				443,
+				444,
+				445,
+				446,
+				447,
+				448,
+				449,
+				450,
+				451,
+				452,
+				453,
+				454,
+				455,
+				456,
+				457,
+				458,
+				459,
+				460,
+				461,
+				462,
+				463,
+				464,
+				465,
+				466,
+				467,
+				468,
+				469,
+				470,
+				471,
+				472,
+				473,
+				474,
+				475,
+				476,
+				477,
+				478,
+				479,
+				480,
+				481,
+				482,
+				483,
+				484,
+				485,
+				486,
+				487,
+				488,
+				489,
+				490,
+				491,
+				492,
+				493,
+				494,
+				495,
+				496,
+				497,
+				498,
+				499,
+				500,
+				501,
+				502
+			],
+			"name" : "include\\SDL3",
+			"sourceIndexes" : []
+		},
+		{
+			"interfaceSourceIndexes" : 
+			[
+				503
+			],
+			"name" : "Header Files",
+			"sourceIndexes" : []
+		}
+	],
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

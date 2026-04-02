@@ -1,0 +1,70 @@
+{
+	"abstract" : true,
+	"artifacts" : 
+	[
+		{
+			"path" : "/usr/bin/git"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"find_package",
+			"git_describe"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/share/cmake/Modules/FindGit.cmake",
+			"SDL/cmake/GetGitRevisionDescription.cmake",
+			"SDL/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 3724,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 193,
+				"parent" : 1
+			},
+			{
+				"file" : 0,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 179,
+				"parent" : 3
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "Git::Git::@e7c329919722962a2ad4",
+	"imported" : true,
+	"local" : true,
+	"name" : "Git::Git",
+	"nameOnDisk" : "git",
+	"paths" : 
+	{
+		"build" : "SDL",
+		"source" : "SDL"
+	},
+	"sources" : [],
+	"type" : "EXECUTABLE"
+}

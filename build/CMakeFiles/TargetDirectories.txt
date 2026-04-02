@@ -1,0 +1,8 @@
+/Users/nickschlosser/RoboticArm-Game/build/CMakeFiles/game.dir
+/Users/nickschlosser/RoboticArm-Game/build/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/build/CMakeFiles/rebuild_cache.dir
+/Users/nickschlosser/RoboticArm-Game/build/SDL/CMakeFiles/SDL3-shared.dir
+/Users/nickschlosser/RoboticArm-Game/build/SDL/CMakeFiles/SDL3_test.dir
+/Users/nickschlosser/RoboticArm-Game/build/SDL/CMakeFiles/SDL_uclibc.dir
+/Users/nickschlosser/RoboticArm-Game/build/SDL/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/build/SDL/CMakeFiles/rebuild_cache.dir
