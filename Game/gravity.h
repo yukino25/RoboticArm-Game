@@ -1,7 +1,9 @@
-#ifdef gravity_h
+#pragma once
+#include "types.h"
+#include <vector>
 
-#define gravity_h
+// Returns n+1 joint positions: joints[0]=base, joints[n]=tip
+std::vector<Vec2> compute_fk(const Arm& arm);
 
-
-
-#endif
+// Convenience: returns arm tip position
+Vec2 arm_tip(const Arm& arm);
