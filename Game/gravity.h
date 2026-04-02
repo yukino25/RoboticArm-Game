@@ -7,3 +7,6 @@ std::vector<Vec2> compute_fk(const Arm& arm);
 
 // Convenience: returns arm tip position
 Vec2 arm_tip(const Arm& arm);
+
+// Integrate gravity + velocity for one frame. Does nothing if obj.grabbed.
+void update_object(Object& obj, float dt);

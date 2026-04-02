@@ -60,3 +60,29 @@ TEST_CASE("arm_tip returns last FK joint") {
     REQUIRE_THAT(tip.x, Catch::Matchers::WithinAbs(110.0f, 0.001f));
     REQUIRE_THAT(tip.y, Catch::Matchers::WithinAbs(20.0f,  0.001f));
 }
+
+TEST_CASE("update_object: applies gravity and integrates position") {
+    Object obj{100.0f, 100.0f, 0.0f, 0.0f, false};
+
+    update_object(obj, 1.0f); // 1 second
+
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(GRAVITY, 0.001f));
+    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(100.0f + GRAVITY, 0.001f));
+}
+
+TEST_CASE("update_object: horizontal velocity integrates") {
+    Object obj{100.0f, 0.0f, 50.0f, 0.0f, false};
+
+    update_object(obj, 0.1f);
+
+    REQUIRE_THAT(obj.x, Catch::Matchers::WithinAbs(105.0f, 0.001f));
+}
+
+TEST_CASE("update_object: does nothing when grabbed") {
+    Object obj{100.0f, 100.0f, 0.0f, 0.0f, true};
+
+    update_object(obj, 1.0f);
+
+    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(100.0f, 0.001f));
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(0.0f,   0.001f));
+}

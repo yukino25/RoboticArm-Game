@@ -21,3 +21,10 @@ std::vector<Vec2> compute_fk(const Arm& arm) {
 Vec2 arm_tip(const Arm& arm) {
     return compute_fk(arm).back();
 }
+
+void update_object(Object& obj, float dt) {
+    if (obj.grabbed) return;
+    obj.vy += GRAVITY * dt;
+    obj.x  += obj.vx * dt;
+    obj.y  += obj.vy * dt;
+}
