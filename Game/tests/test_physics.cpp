@@ -62,12 +62,12 @@ TEST_CASE("arm_tip returns last FK joint") {
 }
 
 TEST_CASE("update_object: applies gravity and integrates position") {
-    Object obj{100.0f, 100.0f, 0.0f, 0.0f, false};
+    Object obj{100.0f, 50.0f, 0.0f, 0.0f, false};
 
-    update_object(obj, 1.0f); // 1 second
+    update_object(obj, 0.5f); // 0.5 seconds
 
-    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(GRAVITY, 0.001f));
-    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(100.0f + GRAVITY, 0.001f));
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(250.0f, 0.001f));
+    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(175.0f, 0.001f));
 }
 
 TEST_CASE("update_object: horizontal velocity integrates") {
@@ -85,4 +85,21 @@ TEST_CASE("update_object: does nothing when grabbed") {
 
     REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(100.0f, 0.001f));
     REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(0.0f,   0.001f));
+}
+
+TEST_CASE("update_object: clamps at left world edge") {
+    Object obj{-5.0f, 100.0f, -50.0f, 0.0f, false};
+    update_object(obj, 0.0f); // dt=0 so only clamping runs
+    REQUIRE_THAT(obj.x,  Catch::Matchers::WithinAbs(0.0f, 0.001f));
+    REQUIRE_THAT(obj.vx, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+}
+
+TEST_CASE("update_object: clamps at bottom world edge") {
+    // GAME_HEIGHT*BLOCK_SIZE = 18*24 = 432. Object bottom = obj.y + OBJ_H (20)
+    // Place object so it already exceeds bottom
+    float bottom = GAME_HEIGHT * BLOCK_SIZE;
+    Object obj{100.0f, bottom - 5.0f, 0.0f, 100.0f, false};
+    update_object(obj, 0.0f);
+    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(bottom - OBJ_H, 0.001f));
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(0.0f, 0.001f));
 }

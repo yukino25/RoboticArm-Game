@@ -27,4 +27,10 @@ void update_object(Object& obj, float dt) {
     obj.vy += GRAVITY * dt;
     obj.x  += obj.vx * dt;
     obj.y  += obj.vy * dt;
+
+    // Clamp to world bounds
+    if (obj.x < 0.0f)                                { obj.x = 0.0f;                                   obj.vx = 0.0f; }
+    if (obj.y < 0.0f)                                { obj.y = 0.0f;                                   obj.vy = 0.0f; }
+    if (obj.x + OBJ_W > GAME_WIDTH  * BLOCK_SIZE)   { obj.x = GAME_WIDTH  * BLOCK_SIZE - OBJ_W;  obj.vx = 0.0f; }
+    if (obj.y + OBJ_H > GAME_HEIGHT * BLOCK_SIZE)   { obj.y = GAME_HEIGHT * BLOCK_SIZE - OBJ_H;  obj.vy = 0.0f; }
 }
