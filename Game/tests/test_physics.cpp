@@ -147,3 +147,42 @@ TEST_CASE("tile collision: no change when object in empty space") {
     REQUIRE_THAT(obj.x,  Catch::Matchers::WithinAbs(100.0f, 0.001f));
     REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(100.0f, 0.001f));
 }
+
+static Arm make_horizontal_arm(float base_x, float base_y, float length) {
+    Arm arm;
+    arm.base_x = base_x; arm.base_y = base_y; arm.base_angle = 0.0f;
+    arm.active_segment = 0;
+    arm.segments.push_back({SegmentType::PIVOT, 0.0f, length});
+    return arm;
+}
+
+TEST_CASE("can_grab: true when object center within GRAB_RADIUS of tip") {
+    // Tip at (100, 0). Object center at (95, 0) → distance 5 < 12
+    Arm arm = make_horizontal_arm(0.0f, 0.0f, 100.0f);
+    Object obj{95.0f - OBJ_W / 2, -OBJ_H / 2, 0.0f, 0.0f, false};
+    REQUIRE(can_grab(obj, arm) == true);
+}
+
+TEST_CASE("can_grab: false when object center beyond GRAB_RADIUS") {
+    // Tip at (100, 0). Object center at (115, 0) → distance 15 > 12
+    Arm arm = make_horizontal_arm(0.0f, 0.0f, 100.0f);
+    Object obj{115.0f - OBJ_W / 2, -OBJ_H / 2, 0.0f, 0.0f, false};
+    REQUIRE(can_grab(obj, arm) == false);
+}
+
+TEST_CASE("grab_object: sets grabbed=true and zeros velocity") {
+    Object obj{0.0f, 0.0f, 30.0f, 100.0f, false};
+    grab_object(obj);
+    REQUIRE(obj.grabbed == true);
+    REQUIRE_THAT(obj.vx, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+}
+
+TEST_CASE("release_object: sets grabbed=false and inherits tip velocity") {
+    Object obj{0.0f, 0.0f, 0.0f, 0.0f, true};
+    Vec2 tip_vel{150.0f, -80.0f};
+    release_object(obj, tip_vel);
+    REQUIRE(obj.grabbed == false);
+    REQUIRE_THAT(obj.vx, Catch::Matchers::WithinAbs(150.0f, 0.001f));
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(-80.0f, 0.001f));
+}

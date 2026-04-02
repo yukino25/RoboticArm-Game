@@ -13,3 +13,12 @@ void update_object(Object& obj, float dt);
 
 // Resolve object AABB against solid tiles. Modifies obj pos/vel.
 void resolve_tile_collision(Object& obj, const TileType* tiles, float obj_w, float obj_h);
+
+// True when object center is within GRAB_RADIUS of arm tip
+bool can_grab(const Object& obj, const Arm& arm);
+
+// Set grabbed=true, zero velocity
+void grab_object(Object& obj);
+
+// Set grabbed=false, inherit tip velocity
+void release_object(Object& obj, Vec2 tip_vel);

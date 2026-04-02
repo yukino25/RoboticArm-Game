@@ -77,3 +77,24 @@ void resolve_tile_collision(Object& obj, const TileType* tiles, float obj_w, flo
         if (!any) break;
     }
 }
+
+bool can_grab(const Object& obj, const Arm& arm) {
+    Vec2 tip = arm_tip(arm);
+    float cx = obj.x + OBJ_W / 2;
+    float cy = obj.y + OBJ_H / 2;
+    float dx = tip.x - cx;
+    float dy = tip.y - cy;
+    return dx * dx + dy * dy <= GRAB_RADIUS * GRAB_RADIUS;
+}
+
+void grab_object(Object& obj) {
+    obj.grabbed = true;
+    obj.vx = 0.0f;
+    obj.vy = 0.0f;
+}
+
+void release_object(Object& obj, Vec2 tip_vel) {
+    obj.grabbed = false;
+    obj.vx = tip_vel.x;
+    obj.vy = tip_vel.y;
+}
