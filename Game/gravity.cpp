@@ -1,6 +1,5 @@
 #include "gravity.h"
 #include <cmath>
-#include <algorithm>
 
 std::vector<Vec2> compute_fk(const Arm& arm) {
     std::vector<Vec2> joints;
