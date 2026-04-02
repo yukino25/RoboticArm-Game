@@ -103,3 +103,47 @@ TEST_CASE("update_object: clamps at bottom world edge") {
     REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(bottom - OBJ_H, 0.001f));
     REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(0.0f, 0.001f));
 }
+
+static void fill_floor(TileType* tiles, int row) {
+    for (int x = 0; x < (int)GAME_WIDTH; x++)
+        tiles[row * GAME_WIDTH + x] = TileType::SOLID;
+}
+
+TEST_CASE("tile collision: object stops on solid floor") {
+    TileType tiles[GAME_WIDTH * GAME_HEIGHT];
+    std::fill(tiles, tiles + GAME_WIDTH * GAME_HEIGHT, TileType::EMPTY);
+    fill_floor(tiles, 5); // floor top at y = 5*24 = 120
+
+    // Object overlaps floor
+    Object obj{48.0f, 5 * BLOCK_SIZE - 10.0f, 0.0f, 200.0f, false};
+
+    resolve_tile_collision(obj, tiles, OBJ_W, OBJ_H);
+
+    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(5 * BLOCK_SIZE - OBJ_H, 0.5f));
+    REQUIRE_THAT(obj.vy, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+}
+
+TEST_CASE("tile collision: object stops against left wall") {
+    TileType tiles[GAME_WIDTH * GAME_HEIGHT];
+    std::fill(tiles, tiles + GAME_WIDTH * GAME_HEIGHT, TileType::EMPTY);
+    for (int y = 0; y < (int)GAME_HEIGHT; y++)
+        tiles[y * GAME_WIDTH + 3] = TileType::SOLID;
+
+    Object obj{3 * BLOCK_SIZE - 5.0f, 48.0f, 100.0f, 0.0f, false};
+
+    resolve_tile_collision(obj, tiles, OBJ_W, OBJ_H);
+
+    REQUIRE_THAT(obj.x,  Catch::Matchers::WithinAbs(3 * BLOCK_SIZE - OBJ_W, 0.5f));
+    REQUIRE_THAT(obj.vx, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+}
+
+TEST_CASE("tile collision: no change when object in empty space") {
+    TileType tiles[GAME_WIDTH * GAME_HEIGHT];
+    std::fill(tiles, tiles + GAME_WIDTH * GAME_HEIGHT, TileType::EMPTY);
+
+    Object obj{100.0f, 100.0f, 50.0f, 50.0f, false};
+    resolve_tile_collision(obj, tiles, OBJ_W, OBJ_H);
+
+    REQUIRE_THAT(obj.x,  Catch::Matchers::WithinAbs(100.0f, 0.001f));
+    REQUIRE_THAT(obj.y,  Catch::Matchers::WithinAbs(100.0f, 0.001f));
+}

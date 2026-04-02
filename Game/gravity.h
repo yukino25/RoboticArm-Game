@@ -10,3 +10,6 @@ Vec2 arm_tip(const Arm& arm);
 
 // Integrate gravity + velocity for one frame. Does nothing if obj.grabbed.
 void update_object(Object& obj, float dt);
+
+// Resolve object AABB against solid tiles. Modifies obj pos/vel.
+void resolve_tile_collision(Object& obj, const TileType* tiles, float obj_w, float obj_h);
