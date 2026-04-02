@@ -1,6 +1,5 @@
 // Game/movement.cpp
 #include "movement.h"
-#include <algorithm>
 
 void cycle_selection(GameState& gs, int direction) {
     Level& level = gs.level;
