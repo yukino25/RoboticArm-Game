@@ -18,7 +18,7 @@ void render_level(SDL_Renderer* renderer, const Level& level, bool won) {
     }
 
     // Target zone outline
-    SDL_SetRenderDrawColor(renderer, won ? 0 : 0, won ? 220 : 180, won ? 100 : 0, 255);
+    SDL_SetRenderDrawColor(renderer, 0, won ? 220 : 180, won ? 100 : 0, 255);
     SDL_FRect tz = to_sdl(level.target_zone);
     SDL_RenderRect(renderer, &tz);
 

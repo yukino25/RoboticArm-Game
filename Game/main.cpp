@@ -96,7 +96,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
     float dt = std::min((now - state->prev_ticks) / 1000.0f, 0.05f);
     state->prev_ticks = now;
 
-    // Track tip position for velocity on release
+    // Track tip position for velocity on release.
+    // TODO Phase C: when two arms exist, track the grabbing arm's tip, not the active arm's.
     Arm& active_arm = level.arms[level.active_arm];
     state->prev_tip = arm_tip(active_arm);
 
