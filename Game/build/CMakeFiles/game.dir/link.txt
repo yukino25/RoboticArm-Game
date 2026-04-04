@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/game.dir/main.cpp.o CMakeFiles/game.dir/gravity.cpp.o CMakeFiles/game.dir/movement.cpp.o CMakeFiles/game.dir/level.cpp.o CMakeFiles/game.dir/render.cpp.o -o game  -Wl,-rpath,/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/SDL SDL/libSDL3.0.dylib
