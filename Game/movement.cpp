@@ -1,5 +1,6 @@
 // Game/movement.cpp
 #include "movement.h"
+#include "gravity.h"
 #include <algorithm>
 
 void cycle_selection(GameState& gs, int direction) {
@@ -33,6 +34,79 @@ void cycle_selection(GameState& gs, int direction) {
     } else {
         arm.active_segment = new_seg;
     }
+}
+
+// Returns true if any joint of `arm` overlaps a solid tile.
+static bool joints_hit_tiles(const Arm& arm, const TileType* tiles) {
+    auto joints = compute_fk(arm);
+    for (const auto& j : joints) {
+        int tx = (int)(j.x / BLOCK_SIZE);
+        int ty = (int)(j.y / BLOCK_SIZE);
+        if (tx < 0 || ty < 0 || tx >= (int)GAME_WIDTH || ty >= (int)GAME_HEIGHT)
+            continue; // out-of-bounds joints are allowed (arm can poke outside world edge)
+        if (tiles[ty * GAME_WIDTH + tx] == TileType::SOLID)
+            return true;
+    }
+    return false;
+}
+
+float clamp_segment_delta(
+    Arm arm,
+    int seg_idx,
+    bool is_angle,
+    float requested_delta,
+    const TileType* tiles,
+    const std::vector<Arm>& all_arms,
+    int moving_arm_idx)
+{
+    if (requested_delta == 0.0f) return 0.0f;
+
+    float lo = 0.0f;
+    float hi = requested_delta;
+
+    // Tile collision binary search
+    for (int i = 0; i < SEGMENT_COLLISION_ITERATIONS; i++) {
+        float mid = (lo + hi) / 2.0f;
+        Arm test = arm;
+        if (seg_idx >= 0 && seg_idx < (int)test.segments.size()) {
+            if (is_angle) test.segments[seg_idx].angle  += mid;
+            else          test.segments[seg_idx].length  = std::max(MIN_SEG_LEN, test.segments[seg_idx].length + mid);
+        }
+        if (joints_hit_tiles(test, tiles)) hi = mid;
+        else                               lo = mid;
+    }
+
+    // Arm-to-arm collision binary search (lo so far is tile-safe)
+    float arm_hi = lo;
+    float arm_lo = 0.0f;
+    for (int i = 0; i < SEGMENT_COLLISION_ITERATIONS; i++) {
+        float mid = (arm_lo + arm_hi) / 2.0f;
+        Arm test = arm;
+        if (seg_idx >= 0 && seg_idx < (int)test.segments.size()) {
+            if (is_angle) test.segments[seg_idx].angle  += mid;
+            else          test.segments[seg_idx].length  = std::max(MIN_SEG_LEN, test.segments[seg_idx].length + mid);
+        }
+        auto joints_a = compute_fk(test);
+        bool collides = false;
+        for (int ai = 0; ai < (int)all_arms.size() && !collides; ai++) {
+            if (ai == moving_arm_idx) continue;
+            auto joints_b = compute_fk(all_arms[ai]);
+            for (const auto& ja : joints_a) {
+                for (const auto& jb : joints_b) {
+                    float dx = ja.x - jb.x, dy = ja.y - jb.y;
+                    if (dx*dx + dy*dy < ARM_RADIUS * ARM_RADIUS) {
+                        collides = true;
+                        break;
+                    }
+                }
+                if (collides) break;
+            }
+        }
+        if (collides) arm_hi = mid;
+        else          arm_lo = mid;
+    }
+
+    return arm_lo;
 }
 
 void apply_movement(Arm& arm, float delta_angle, float delta_extend, float delta_track) {

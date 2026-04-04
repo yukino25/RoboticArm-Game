@@ -142,3 +142,60 @@ TEST_CASE("apply_movement: base clamps at track max") {
     apply_movement(arm, 0.0f, 0.0f, 50.0f);
     REQUIRE_THAT(arm.base_x, Catch::Matchers::WithinAbs(200.0f, 0.001f));
 }
+
+// ---- clamp_segment_delta helpers ----
+
+static TileType empty_tiles[GAME_WIDTH * GAME_HEIGHT];
+static TileType wall_tiles[GAME_WIDTH * GAME_HEIGHT];
+
+static void init_tile_helpers() {
+    std::fill(empty_tiles, empty_tiles + GAME_WIDTH * GAME_HEIGHT, TileType::EMPTY);
+    std::fill(wall_tiles,  wall_tiles  + GAME_WIDTH * GAME_HEIGHT, TileType::EMPTY);
+    // Vertical wall at column 5 (x = 5*24 = 120)
+    for (int y = 0; y < (int)GAME_HEIGHT; y++)
+        wall_tiles[y * GAME_WIDTH + 5] = TileType::SOLID;
+}
+
+TEST_CASE("clamp_segment_delta: no wall — full delta returned") {
+    init_tile_helpers();
+    Arm arm;
+    arm.base_x = 0; arm.base_y = 0; arm.base_angle = 0;
+    arm.active_segment = 0;
+    arm.segments.push_back({SegmentType::PIVOT, 0.0f, 50.0f});
+
+    std::vector<Arm> arms{arm};
+    float result = clamp_segment_delta(arm, 0, true, 1.0f, empty_tiles, arms, 0);
+
+    REQUIRE_THAT(result, Catch::Matchers::WithinAbs(1.0f, 0.05f));
+}
+
+TEST_CASE("clamp_segment_delta: wall blocks extension before requested delta") {
+    init_tile_helpers();
+    // Arm base at (0, 60), pointing right (angle=0), length=100 => tip at (100, 60).
+    // Wall at col 5 = x=120. Extending by 25 would put tip at x=125 (inside wall at x=120..144)
+    Arm arm;
+    arm.base_x = 0; arm.base_y = 60; arm.base_angle = 0;
+    arm.active_segment = 0;
+    arm.segments.push_back({SegmentType::EXTEND, 0.0f, 100.0f});
+
+    std::vector<Arm> arms{arm};
+    float result = clamp_segment_delta(arm, 0, false, 25.0f, wall_tiles, arms, 0);
+
+    // Safe delta must be less than 25 (tip would hit wall)
+    REQUIRE(result < 25.0f);
+    // And must be >= 0 (don't move backward)
+    REQUIRE(result >= 0.0f);
+}
+
+TEST_CASE("clamp_segment_delta: zero delta returns zero") {
+    init_tile_helpers();
+    Arm arm;
+    arm.base_x = 0; arm.base_y = 0; arm.base_angle = 0;
+    arm.active_segment = 0;
+    arm.segments.push_back({SegmentType::PIVOT, 0.0f, 50.0f});
+
+    std::vector<Arm> arms{arm};
+    float result = clamp_segment_delta(arm, 0, true, 0.0f, empty_tiles, arms, 0);
+
+    REQUIRE_THAT(result, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+}
