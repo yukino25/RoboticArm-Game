@@ -1,0 +1,15 @@
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/CMakeFiles/game.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/CMakeFiles/tests.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/CMakeFiles/rebuild_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/SDL/CMakeFiles/SDL3-shared.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/SDL/CMakeFiles/SDL3_test.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/SDL/CMakeFiles/SDL_uclibc.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/SDL/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/SDL/CMakeFiles/rebuild_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-subbuild/CMakeFiles/edit_cache.dir
+/Users/nickschlosser/RoboticArm-Game/.worktrees/phase-a/Game/build/_deps/catch2-subbuild/CMakeFiles/rebuild_cache.dir
