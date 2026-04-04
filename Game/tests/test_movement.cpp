@@ -166,7 +166,7 @@ TEST_CASE("clamp_segment_delta: no wall — full delta returned") {
     std::vector<Arm> arms{arm};
     float result = clamp_segment_delta(arm, 0, true, 1.0f, empty_tiles, arms, 0);
 
-    REQUIRE_THAT(result, Catch::Matchers::WithinAbs(1.0f, 0.05f));
+    REQUIRE_THAT(result, Catch::Matchers::WithinAbs(1.0f, 0.01f));
 }
 
 TEST_CASE("clamp_segment_delta: wall blocks extension before requested delta") {
@@ -198,4 +198,33 @@ TEST_CASE("clamp_segment_delta: zero delta returns zero") {
     float result = clamp_segment_delta(arm, 0, true, 0.0f, empty_tiles, arms, 0);
 
     REQUIRE_THAT(result, Catch::Matchers::WithinAbs(0.0f, 0.001f));
+}
+
+TEST_CASE("clamp_segment_delta: arm-to-arm collision limits delta") {
+    init_tile_helpers();
+    // Arm A: base at (0,0), pointing right, length=50 => tip at (50,0)
+    Arm arm_a;
+    arm_a.base_x = 0; arm_a.base_y = 0; arm_a.base_angle = 0;
+    arm_a.active_segment = 0;
+    arm_a.segments.push_back({SegmentType::EXTEND, 0.0f, 50.0f});
+
+    // Arm B: base at (100,0), pointing left (angle=PI), length=50 => tip at (50,0)
+    // So arm_b's tip is at (50,0) — same as arm_a's tip. Already touching.
+    // Arm A tries to extend 20px more => tip would move to (70,0),
+    // which is 30px away from arm_b base at (100,0), well within ARM_RADIUS.
+    // But we only need to verify that moving arm_a toward arm_b is clamped.
+    // Let's set arm_b tip at x=70 (arm_b base at (100,0), angle=PI, length=30 => tip at (70,0)).
+    Arm arm_b;
+    arm_b.base_x = 100; arm_b.base_y = 0; arm_b.base_angle = 3.14159f;
+    arm_b.active_segment = 0;
+    arm_b.segments.push_back({SegmentType::PIVOT, 0.0f, 30.0f});
+
+    std::vector<Arm> arms{arm_a, arm_b};
+    // arm_a tip is at (50,0). arm_b tip is at (70,0). Gap = 20px > ARM_RADIUS(8).
+    // Extending arm_a by 25 would put tip at (75,0). Gap to arm_b tip = 5px < ARM_RADIUS.
+    // So the delta should be clamped below 25.
+    float result = clamp_segment_delta(arm_a, 0, false, 25.0f, empty_tiles, arms, 0);
+
+    REQUIRE(result < 25.0f);
+    REQUIRE(result >= 0.0f);
 }

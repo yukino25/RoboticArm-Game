@@ -2,6 +2,7 @@
 #include "movement.h"
 #include "gravity.h"
 #include <algorithm>
+#include <cmath>
 
 void cycle_selection(GameState& gs, int direction) {
     Level& level = gs.level;
@@ -61,38 +62,42 @@ float clamp_segment_delta(
 {
     if (requested_delta == 0.0f) return 0.0f;
 
-    float lo = 0.0f;
-    float hi = requested_delta;
+    float sign         = (requested_delta > 0.0f) ? 1.0f : -1.0f;
+    float abs_request  = std::abs(requested_delta);
 
-    // Tile collision binary search
-    for (int i = 0; i < SEGMENT_COLLISION_ITERATIONS; i++) {
-        float mid = (lo + hi) / 2.0f;
-        Arm test = arm;
-        if (seg_idx >= 0 && seg_idx < (int)test.segments.size()) {
-            if (is_angle) test.segments[seg_idx].angle  += mid;
-            else          test.segments[seg_idx].length  = std::max(MIN_SEG_LEN, test.segments[seg_idx].length + mid);
-        }
-        if (joints_hit_tiles(test, tiles)) hi = mid;
-        else                               lo = mid;
+    // Pre-compute foreign arms' joints (they don't move)
+    std::vector<std::vector<Vec2>> foreign_joints;
+    for (int ai = 0; ai < (int)all_arms.size(); ai++) {
+        if (ai == moving_arm_idx) continue;
+        foreign_joints.push_back(compute_fk(all_arms[ai]));
     }
 
-    // Arm-to-arm collision binary search (lo so far is tile-safe)
-    float arm_hi = lo;
-    float arm_lo = 0.0f;
+    // Helper: apply unsigned delta to a copy of arm
+    auto apply_delta = [&](Arm a, float d) -> Arm {
+        if (seg_idx >= 0 && seg_idx < (int)a.segments.size()) {
+            if (is_angle) a.segments[seg_idx].angle  += sign * d;
+            else          a.segments[seg_idx].length  = std::max(MIN_SEG_LEN, a.segments[seg_idx].length + sign * d);
+        }
+        return a;
+    };
+
+    // Pass 1: tile collision — binary search over [0, abs_request]
+    float lo = 0.0f, hi = abs_request;
+    for (int i = 0; i < SEGMENT_COLLISION_ITERATIONS; i++) {
+        float mid = (lo + hi) / 2.0f;
+        if (joints_hit_tiles(apply_delta(arm, mid), tiles)) hi = mid;
+        else                                                 lo = mid;
+    }
+
+    // Pass 2: arm-to-arm — binary search over [0, lo] (tile-safe upper bound)
+    float arm_lo = 0.0f, arm_hi = lo;
     for (int i = 0; i < SEGMENT_COLLISION_ITERATIONS; i++) {
         float mid = (arm_lo + arm_hi) / 2.0f;
-        Arm test = arm;
-        if (seg_idx >= 0 && seg_idx < (int)test.segments.size()) {
-            if (is_angle) test.segments[seg_idx].angle  += mid;
-            else          test.segments[seg_idx].length  = std::max(MIN_SEG_LEN, test.segments[seg_idx].length + mid);
-        }
-        auto joints_a = compute_fk(test);
+        auto joints_a = compute_fk(apply_delta(arm, mid));
         bool collides = false;
-        for (int ai = 0; ai < (int)all_arms.size() && !collides; ai++) {
-            if (ai == moving_arm_idx) continue;
-            auto joints_b = compute_fk(all_arms[ai]);
+        for (const auto& jb_list : foreign_joints) {
             for (const auto& ja : joints_a) {
-                for (const auto& jb : joints_b) {
+                for (const auto& jb : jb_list) {
                     float dx = ja.x - jb.x, dy = ja.y - jb.y;
                     if (dx*dx + dy*dy < ARM_RADIUS * ARM_RADIUS) {
                         collides = true;
@@ -101,12 +106,13 @@ float clamp_segment_delta(
                 }
                 if (collides) break;
             }
+            if (collides) break;
         }
         if (collides) arm_hi = mid;
         else          arm_lo = mid;
     }
 
-    return arm_lo;
+    return sign * arm_lo;
 }
 
 void apply_movement(Arm& arm, float delta_angle, float delta_extend, float delta_track) {
