@@ -109,7 +109,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
     if (keys[SDL_SCANCODE_UP])  { delta_extend =  EXTEND_SPEED * dt; delta_track =  TRACK_SPEED * dt; }
     if (keys[SDL_SCANCODE_DOWN]){ delta_extend = -EXTEND_SPEED * dt; delta_track = -TRACK_SPEED * dt; }
 
-    apply_movement(active_arm, delta_angle, delta_extend, delta_track);
+    apply_movement(active_arm, delta_angle, delta_extend, delta_track,
+                   level.tiles, level.arms, level.active_arm);
 
     // Object update
     Object& obj = level.object;

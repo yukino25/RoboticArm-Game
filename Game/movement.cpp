@@ -115,24 +115,42 @@ float clamp_segment_delta(
     return sign * arm_lo;
 }
 
-void apply_movement(Arm& arm, float delta_angle, float delta_extend, float delta_track) {
+void apply_movement(
+    Arm& arm,
+    float delta_angle,
+    float delta_extend,
+    float delta_track,
+    const TileType* tiles,
+    const std::vector<Arm>& all_arms,
+    int moving_arm_idx)
+{
     if (arm.active_segment == -1) {
         if (!arm.track.has_value()) return;
         const Track& t = arm.track.value();
+        // Track base movement: tile-clamp only (no arm-to-arm on base)
         if (t.horizontal) {
-            arm.base_x = std::clamp(arm.base_x + delta_track, t.min, t.max);
+            float new_x = std::clamp(arm.base_x + delta_track, t.min, t.max);
+            float saved = arm.base_x;
+            arm.base_x = new_x;
+            if (joints_hit_tiles(arm, tiles)) arm.base_x = saved;
         } else {
-            arm.base_y = std::clamp(arm.base_y + delta_track, t.min, t.max);
+            float new_y = std::clamp(arm.base_y + delta_track, t.min, t.max);
+            float saved = arm.base_y;
+            arm.base_y = new_y;
+            if (joints_hit_tiles(arm, tiles)) arm.base_y = saved;
         }
         return;
     }
 
-    Segment& seg = arm.segments[arm.active_segment];
+    int idx = arm.active_segment;
+    Segment& seg = arm.segments[idx];
 
     if (seg.type == SegmentType::PIVOT || seg.type == SegmentType::BOTH) {
-        seg.angle += delta_angle;
+        float safe = clamp_segment_delta(arm, idx, true, delta_angle, tiles, all_arms, moving_arm_idx);
+        seg.angle += safe;
     }
     if (seg.type == SegmentType::EXTEND || seg.type == SegmentType::BOTH) {
-        seg.length = std::max(MIN_SEG_LEN, seg.length + delta_extend);
+        float safe = clamp_segment_delta(arm, idx, false, delta_extend, tiles, all_arms, moving_arm_idx);
+        seg.length = std::max(MIN_SEG_LEN, seg.length + safe);
     }
 }
