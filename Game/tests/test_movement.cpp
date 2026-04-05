@@ -169,6 +169,19 @@ TEST_CASE("clamp_segment_delta: no wall — full delta returned") {
     REQUIRE_THAT(result, Catch::Matchers::WithinAbs(1.0f, 0.01f));
 }
 
+TEST_CASE("clamp_segment_delta: negative delta — no wall returns full negative delta") {
+    init_tile_helpers();
+    Arm arm;
+    arm.base_x = 0; arm.base_y = 0; arm.base_angle = 0;
+    arm.active_segment = 0;
+    arm.segments.push_back({SegmentType::PIVOT, 0.0f, 50.0f});
+
+    std::vector<Arm> arms{arm};
+    float result = clamp_segment_delta(arm, 0, true, -1.0f, empty_tiles, arms, 0);
+
+    REQUIRE_THAT(result, Catch::Matchers::WithinAbs(-1.0f, 0.01f));
+}
+
 TEST_CASE("clamp_segment_delta: wall blocks extension before requested delta") {
     init_tile_helpers();
     // Arm base at (0, 60), pointing right (angle=0), length=100 => tip at (100, 60).
@@ -185,6 +198,7 @@ TEST_CASE("clamp_segment_delta: wall blocks extension before requested delta") {
     REQUIRE(result < 25.0f);
     // And must be >= 0 (don't move backward)
     REQUIRE(result >= 0.0f);
+    REQUIRE(result > 10.0f);  // should allow movement up to ~20px before hitting the wall
 }
 
 TEST_CASE("clamp_segment_delta: zero delta returns zero") {
@@ -208,12 +222,7 @@ TEST_CASE("clamp_segment_delta: arm-to-arm collision limits delta") {
     arm_a.active_segment = 0;
     arm_a.segments.push_back({SegmentType::EXTEND, 0.0f, 50.0f});
 
-    // Arm B: base at (100,0), pointing left (angle=PI), length=50 => tip at (50,0)
-    // So arm_b's tip is at (50,0) — same as arm_a's tip. Already touching.
-    // Arm A tries to extend 20px more => tip would move to (70,0),
-    // which is 30px away from arm_b base at (100,0), well within ARM_RADIUS.
-    // But we only need to verify that moving arm_a toward arm_b is clamped.
-    // Let's set arm_b tip at x=70 (arm_b base at (100,0), angle=PI, length=30 => tip at (70,0)).
+    // Arm B: base at (100,0), pointing left (angle=PI), length=30 => tip at (70,0)
     Arm arm_b;
     arm_b.base_x = 100; arm_b.base_y = 0; arm_b.base_angle = 3.14159f;
     arm_b.active_segment = 0;
@@ -227,4 +236,5 @@ TEST_CASE("clamp_segment_delta: arm-to-arm collision limits delta") {
 
     REQUIRE(result < 25.0f);
     REQUIRE(result >= 0.0f);
+    REQUIRE(result > 10.0f);  // gap is ~20px, should allow substantial movement before clamping
 }
