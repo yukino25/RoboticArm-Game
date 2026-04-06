@@ -61,12 +61,15 @@ std::optional<Level> load_level(const std::string& path) {
             ss >> key;
             if (key == "base") {
                 ss >> current_arm.base_x >> current_arm.base_y;
+                if (ss.fail()) return std::nullopt;
             } else if (key == "angle") {
                 ss >> current_arm.base_angle;
+                if (ss.fail()) return std::nullopt;
             } else if (key == "segment") {
                 std::string type_str;
                 float length;
                 ss >> type_str >> length;
+                if (ss.fail()) return std::nullopt;
                 SegmentType t;
                 if      (type_str == "pivot")  t = SegmentType::PIVOT;
                 else if (type_str == "extend") t = SegmentType::EXTEND;
@@ -82,6 +85,7 @@ std::optional<Level> load_level(const std::string& path) {
             std::string key; ss >> key;
             if (key == "pos") {
                 ss >> level.object.x >> level.object.y;
+                if (ss.fail()) return std::nullopt;
                 level.object.vx = level.object.vy = 0.0f;
                 level.object.grabbed = false;
                 has_object = true;
@@ -93,6 +97,7 @@ std::optional<Level> load_level(const std::string& path) {
             if (key == "pos") {
                 ss >> level.target_zone.x >> level.target_zone.y
                    >> level.target_zone.w >> level.target_zone.h;
+                if (ss.fail()) return std::nullopt;
                 has_target = true;
             } else return std::nullopt;
         }
@@ -103,6 +108,8 @@ std::optional<Level> load_level(const std::string& path) {
     // Validate
     if (tile_row != (int)GAME_HEIGHT) return std::nullopt;
     if (level.arms.empty())           return std::nullopt;
+    for (const auto& a : level.arms)
+        if (a.segments.empty()) return std::nullopt;
     if (!has_object)                  return std::nullopt;
     if (!has_target)                  return std::nullopt;
 

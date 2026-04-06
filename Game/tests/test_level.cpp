@@ -126,3 +126,41 @@ TEST_CASE("load_level: returns nullopt for wrong tile row count") {
     auto result = load_level(path);
     REQUIRE(!result.has_value());
 }
+
+TEST_CASE("load_level: returns nullopt for wrong tile column count") {
+    // 25-character tile row instead of 24
+    std::string bad = "tiles:\n";
+    for (int i = 0; i < 18; i++)
+        bad += "#########################\n";  // 25 chars
+    bad += "\narm:\nbase 0 0\nangle 0\nsegment pivot 50\n"
+           "\nobject:\npos 0 0\n\ntarget:\npos 0 0 10 10\n";
+    auto path = write_temp("bad_cols.level", bad);
+    REQUIRE(!load_level(path).has_value());
+}
+
+TEST_CASE("load_level: returns nullopt for unknown segment type") {
+    std::string bad = "tiles:\n";
+    for (int i = 0; i < 18; i++) bad += "########################\n";
+    bad += "\narm:\nbase 0 0\nangle 0\nsegment rotate 50\n"
+           "\nobject:\npos 0 0\n\ntarget:\npos 0 0 10 10\n";
+    auto path = write_temp("bad_seg.level", bad);
+    REQUIRE(!load_level(path).has_value());
+}
+
+TEST_CASE("load_level: returns nullopt when object section missing") {
+    std::string bad = "tiles:\n";
+    for (int i = 0; i < 18; i++) bad += "########################\n";
+    bad += "\narm:\nbase 0 0\nangle 0\nsegment pivot 50\n"
+           "\ntarget:\npos 0 0 10 10\n";
+    auto path = write_temp("no_object.level", bad);
+    REQUIRE(!load_level(path).has_value());
+}
+
+TEST_CASE("load_level: returns nullopt when target section missing") {
+    std::string bad = "tiles:\n";
+    for (int i = 0; i < 18; i++) bad += "########################\n";
+    bad += "\narm:\nbase 0 0\nangle 0\nsegment pivot 50\n"
+           "\nobject:\npos 0 0\n";
+    auto path = write_temp("no_target.level", bad);
+    REQUIRE(!load_level(path).has_value());
+}
