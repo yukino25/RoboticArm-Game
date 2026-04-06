@@ -164,3 +164,12 @@ TEST_CASE("load_level: returns nullopt when target section missing") {
     auto path = write_temp("no_target.level", bad);
     REQUIRE(!load_level(path).has_value());
 }
+
+TEST_CASE("load_level: returns nullopt for arm with no segments") {
+    std::string bad = "tiles:\n";
+    for (int i = 0; i < 18; i++) bad += "########################\n";
+    bad += "\narm:\nbase 0 0\nangle 0\n"   // no segment lines
+           "\nobject:\npos 0 0\n\ntarget:\npos 0 0 10 10\n";
+    auto path = write_temp("no_segments.level", bad);
+    REQUIRE(!load_level(path).has_value());
+}
