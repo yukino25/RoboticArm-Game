@@ -13,8 +13,10 @@ constexpr float EXTEND_SPEED  = 80.0f;    // px/s
 constexpr float TRACK_SPEED   = 100.0f;   // px/s
 constexpr float GRAB_RADIUS   = 12.0f;    // px
 constexpr float MIN_SEG_LEN   = 10.0f;    // px
-constexpr float OBJ_W         = 20.0f;    // px
-constexpr float OBJ_H         = 20.0f;    // px
+constexpr float OBJ_W                        = 20.0f;    // px
+constexpr float OBJ_H                        = 20.0f;    // px
+constexpr int   SEGMENT_COLLISION_ITERATIONS = 8;       // binary search passes per frame
+constexpr float ARM_RADIUS                   = 8.0f;    // min distance between joints of different arms (px)
 
 struct Vec2 { float x, y; };
 struct Rect { float x, y, w, h; };

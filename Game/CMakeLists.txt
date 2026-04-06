@@ -33,8 +33,10 @@ FetchContent_MakeAvailable(Catch2)
 add_executable(tests
     tests/test_physics.cpp
     tests/test_movement.cpp
+    tests/test_level.cpp
     gravity.cpp
     movement.cpp
+    level.cpp
 )
 target_include_directories(tests PRIVATE .)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)

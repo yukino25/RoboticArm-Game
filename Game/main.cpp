@@ -40,7 +40,12 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
     SDL_SetRenderLogicalPresentation(state->renderer,
         SDL_WINDOW_WIDTH, SDL_WINDOW_HEIGHT, SDL_LOGICAL_PRESENTATION_LETTERBOX);
 
-    state->gs.level       = make_level_1();
+    auto loaded = load_level("levels/level1.level");
+    if (!loaded) {
+        SDL_Log("Failed to load levels/level1.level");
+        return SDL_APP_FAILURE;
+    }
+    state->gs.level = *loaded;
     state->gs.won         = false;
     state->gs.level_index = 0;
     state->prev_tip       = arm_tip(state->gs.level.arms[0]);
@@ -109,7 +114,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
     if (keys[SDL_SCANCODE_UP])  { delta_extend =  EXTEND_SPEED * dt; delta_track =  TRACK_SPEED * dt; }
     if (keys[SDL_SCANCODE_DOWN]){ delta_extend = -EXTEND_SPEED * dt; delta_track = -TRACK_SPEED * dt; }
 
-    apply_movement(active_arm, delta_angle, delta_extend, delta_track);
+    apply_movement(active_arm, delta_angle, delta_extend, delta_track,
+                   level.tiles, level.arms, level.active_arm);
 
     // Object update
     Object& obj = level.object;
