@@ -1,98 +1,154 @@
-
+// Game/main.cpp
 #define SDL_MAIN_USE_CALLBACKS 1
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include <stdio.h>
+#include <algorithm>
+#include "types.h"
 #include "gravity.h"
 #include "movement.h"
+#include "level.h"
+#include "render.h"
 
-#define STEP_RATE_IN_MILLISECONDS  125
-#define BLOCK_SIZE_IN_PIXELS 24
-#define SDL_WINDOW_WIDTH           (BLOCK_SIZE_IN_PIXELS * GAME_WIDTH)
-#define SDL_WINDOW_HEIGHT          (BLOCK_SIZE_IN_PIXELS * GAME_HEIGHT)
+#define SDL_WINDOW_WIDTH  (int)(BLOCK_SIZE * GAME_WIDTH)
+#define SDL_WINDOW_HEIGHT (int)(BLOCK_SIZE * GAME_HEIGHT)
 
-#define GAME_WIDTH  24U
-#define GAME_HEIGHT 18U
-#define MATRIX_SIZE (GAME_WIDTH * GAME_HEIGHT)
+struct AppState {
+    SDL_Window*   window   = nullptr;
+    SDL_Renderer* renderer = nullptr;
+    GameState gs{};
+    Vec2   prev_tip{};
+    Uint64 prev_ticks = 0;
+};
 
-
-//? use this renderer to draw into this window every frame. 
-static SDL_Window *window = NULL;
-static SDL_Renderer *renderer = NULL;
-
-//? This function runs once at startup. 
-SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
-{
-    SDL_SetAppMetadata("Example Renderer Clear", "1.0", "com.example.renderer-clear");
+SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
+    SDL_SetAppMetadata("Robotic Arm Game", "0.1", "com.example.robotic-arm");
 
     if (!SDL_Init(SDL_INIT_VIDEO)) {
-        SDL_Log("Couldn't initialize SDL: %s", SDL_GetError());
+        SDL_Log("SDL_Init failed: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
 
-    if (!SDL_CreateWindowAndRenderer("examples/renderer/clear", SDL_WINDOW_WIDTH , SDL_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &window, &renderer)) {
-        SDL_Log("Couldn't create window/renderer: %s", SDL_GetError());
+    auto* state = new AppState();
+    *appstate = state;
+
+    if (!SDL_CreateWindowAndRenderer("Robotic Arm Game",
+            SDL_WINDOW_WIDTH, SDL_WINDOW_HEIGHT,
+            SDL_WINDOW_RESIZABLE, &state->window, &state->renderer)) {
+        SDL_Log("SDL_CreateWindowAndRenderer failed: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
-    SDL_SetRenderLogicalPresentation(renderer, SDL_WINDOW_WIDTH , SDL_WINDOW_HEIGHT, SDL_LOGICAL_PRESENTATION_LETTERBOX);
+    SDL_SetRenderLogicalPresentation(state->renderer,
+        SDL_WINDOW_WIDTH, SDL_WINDOW_HEIGHT, SDL_LOGICAL_PRESENTATION_LETTERBOX);
 
-    return SDL_APP_CONTINUE;  /* carry on with the program! */
+    auto loaded = load_level("levels/level1.level");
+    if (!loaded) {
+        SDL_Log("Failed to load levels/level1.level");
+        return SDL_APP_FAILURE;
+    }
+    state->gs.level = *loaded;
+    state->gs.won         = false;
+    state->gs.level_index = 0;
+    state->prev_tip       = arm_tip(state->gs.level.arms[0]);
+    state->prev_ticks     = SDL_GetTicks();
+
+    return SDL_APP_CONTINUE;
 }
 
+SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event) {
+    auto* state = static_cast<AppState*>(appstate);
+    GameState& gs = state->gs;
 
+    if (event->type == SDL_EVENT_QUIT) return SDL_APP_SUCCESS;
 
+    if (event->type == SDL_EVENT_KEY_DOWN && !event->key.repeat) {
+        Level& level = gs.level;
+        Arm&   arm   = level.arms[level.active_arm];
+        Object& obj  = level.object;
 
-/* This function runs when a new event (mouse input, keypresses, etc) occurs. */
-SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
-{
-    if (event->type == SDL_EVENT_QUIT) {
-        return SDL_APP_SUCCESS;  /* end the program, reporting success to the OS. */
+        switch (event->key.scancode) {
+            case SDL_SCANCODE_1: cycle_selection(gs, -1); break;
+            case SDL_SCANCODE_2: cycle_selection(gs, +1); break;
+            case SDL_SCANCODE_E: {
+                if (obj.grabbed) {
+                    Uint64 now = SDL_GetTicks();
+                    float dt = (now - state->prev_ticks) / 1000.0f;
+                    Vec2 cur_tip = arm_tip(arm);
+                    Vec2 tip_vel{0.0f, 0.0f};
+                    if (dt > 0.0f) {
+                        tip_vel.x = (cur_tip.x - state->prev_tip.x) / dt;
+                        tip_vel.y = (cur_tip.y - state->prev_tip.y) / dt;
+                    }
+                    release_object(obj, tip_vel);
+                } else if (can_grab(obj, arm)) {
+                    grab_object(obj);
+                }
+                break;
+            }
+            default: break;
+        }
     }
-    return SDL_APP_CONTINUE;  /* carry on with the program! */
+
+    return SDL_APP_CONTINUE;
 }
 
-//? Runs once per frame, main code of the program. 
-SDL_AppResult SDL_AppIterate(void *appstate)
-{
-    const int red = 200;
-    const int green = 200;
-    const int blue = 200;
-    SDL_SetRenderDrawColor(renderer, red, green, blue, SDL_ALPHA_OPAQUE);  // light gray, full alpha 
-    SDL_RenderClear(renderer);
-    SDL_FRect rects[16];
-    rects[0].x = 10;
-    rects[0].y = 10;
-    rects[0].w = 40;
-    rects[0].h = 100;
-    // one red rectangle
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);  // red, full alpha 
-    SDL_RenderRect(renderer, &rects[0]);
+SDL_AppResult SDL_AppIterate(void* appstate) {
+    auto* state = static_cast<AppState*>(appstate);
+    GameState& gs = state->gs;
+    Level& level  = gs.level;
 
-    /*
-    // three green rectangles, growing in size, centered in the window.
-    for (int i = 0; i < 3; i++) {
-        const float size = (i+1) * 50.0f;
-        rects[i].w = rects[i].h = 2 * size;
-        rects[i].x = (SDL_WINDOW_WIDTH - rects[i].w) / 2;  // center it. 
-        rects[i].y = (SDL_WINDOW_HEIGHT - rects[i].h) / 2;  // center it. 
+    // Delta time
+    Uint64 now = SDL_GetTicks();
+    float dt = std::min((now - state->prev_ticks) / 1000.0f, 0.05f);
+    state->prev_ticks = now;
+
+    // Track tip position for velocity on release.
+    // TODO Phase C: when two arms exist, track the grabbing arm's tip, not the active arm's.
+    Arm& active_arm = level.arms[level.active_arm];
+    state->prev_tip = arm_tip(active_arm);
+
+    // Held-key input
+    const bool* keys = SDL_GetKeyboardState(nullptr);
+    float delta_angle  = 0.0f, delta_extend = 0.0f, delta_track = 0.0f;
+    if (keys[SDL_SCANCODE_LEFT])  delta_angle  = -PIVOT_SPEED  * dt;
+    if (keys[SDL_SCANCODE_RIGHT]) delta_angle  =  PIVOT_SPEED  * dt;
+    if (keys[SDL_SCANCODE_UP])  { delta_extend =  EXTEND_SPEED * dt; delta_track =  TRACK_SPEED * dt; }
+    if (keys[SDL_SCANCODE_DOWN]){ delta_extend = -EXTEND_SPEED * dt; delta_track = -TRACK_SPEED * dt; }
+
+    apply_movement(active_arm, delta_angle, delta_extend, delta_track,
+                   level.tiles, level.arms, level.active_arm);
+
+    // Object update
+    Object& obj = level.object;
+    if (obj.grabbed) {
+        Vec2 tip = arm_tip(active_arm);
+        obj.x = tip.x - OBJ_W / 2;
+        obj.y = tip.y - OBJ_H / 2;
+        obj.vx = obj.vy = 0.0f;
+    } else {
+        update_object(obj, dt);
+        resolve_tile_collision(obj, level.tiles, OBJ_W, OBJ_H);
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, SDL_ALPHA_OPAQUE);  // green, full alpha 
-    SDL_RenderRects(renderer, rects, 3);  // draw three rectangles at once 
-    */
+    // Win check
+    if (!gs.won) {
+        float cx = obj.x + OBJ_W / 2;
+        float cy = obj.y + OBJ_H / 2;
+        const Rect& tz = level.target_zone;
+        if (cx >= tz.x && cx <= tz.x + tz.w && cy >= tz.y && cy <= tz.y + tz.h)
+            gs.won = true;
+    }
 
-    // put the newly-cleared rendering on the screen. 
-    SDL_RenderPresent(renderer);
+    // Render
+    SDL_SetRenderDrawColor(state->renderer, 30, 30, 35, 255);
+    SDL_RenderClear(state->renderer);
+    render_level(state->renderer, level, gs.won);
+    render_object(state->renderer, obj);
+    render_ui(state->renderer, gs);
+    SDL_RenderPresent(state->renderer);
 
-    return SDL_APP_CONTINUE;  // carry on with the program
+    return SDL_APP_CONTINUE;
 }
 
-
-
-
-//? This function runs once at shutdown.
-    void SDL_AppQuit(void *appstate, SDL_AppResult result)
-    {
-        /* SDL will clean up the window/renderer for us. */
-    }
-
+void SDL_AppQuit(void* appstate, SDL_AppResult result) {
+    delete static_cast<AppState*>(appstate);
+}
