@@ -1,18 +1,53 @@
 // Game/render.cpp
 #include "render.h"
 #include "gravity.h"
+#include <SDL3_image/SDL_image.h>
 #include <vector>
 
 static SDL_FRect to_sdl(const Rect& r) { return {r.x, r.y, r.w, r.h}; }
 
-void render_level(SDL_Renderer* renderer, const Level& level, bool won) {
+// ---- Texture loading --------------------------------------------------------
+
+static SDL_Texture* load_tex(SDL_Renderer* r, const char* path) {
+    SDL_Texture* t = IMG_LoadTexture(r, path);
+    if (!t) SDL_Log("Failed to load texture %s: %s", path, SDL_GetError());
+    return t;
+}
+
+bool load_textures(SDL_Renderer* renderer, Textures& out) {
+    out.tile   = load_tex(renderer, "assets/tiles/IndustrialTile_26.png");
+    out.bg     = load_tex(renderer, "assets/background/Background.png");
+    out.object = load_tex(renderer, "assets/objects/Box1.png");
+    return out.tile && out.bg && out.object;
+}
+
+void free_textures(Textures& t) {
+    SDL_DestroyTexture(t.tile);
+    SDL_DestroyTexture(t.bg);
+    SDL_DestroyTexture(t.object);
+    t = {};
+}
+
+// ---- Rendering --------------------------------------------------------------
+
+void render_level(SDL_Renderer* renderer, const Textures& tex, const Level& level, bool won) {
+    // Background — stretched to fill the whole viewport
+    if (tex.bg) {
+        SDL_FRect full{0, 0, BLOCK_SIZE * GAME_WIDTH, BLOCK_SIZE * GAME_HEIGHT};
+        SDL_RenderTexture(renderer, tex.bg, nullptr, &full);
+    }
+
     // Tiles
-    SDL_SetRenderDrawColor(renderer, 100, 100, 110, 255);
     for (int y = 0; y < (int)GAME_HEIGHT; y++) {
         for (int x = 0; x < (int)GAME_WIDTH; x++) {
             if (level.tiles[y * GAME_WIDTH + x] == TileType::SOLID) {
                 SDL_FRect r{x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE};
-                SDL_RenderFillRect(renderer, &r);
+                if (tex.tile) {
+                    SDL_RenderTexture(renderer, tex.tile, nullptr, &r);
+                } else {
+                    SDL_SetRenderDrawColor(renderer, 100, 100, 110, 255);
+                    SDL_RenderFillRect(renderer, &r);
+                }
             }
         }
     }
@@ -40,14 +75,12 @@ void render_arm(SDL_Renderer* renderer, const Arm& arm, bool is_active) {
 
         float x1 = joints[i].x,   y1 = joints[i].y;
         float x2 = joints[i+1].x, y2 = joints[i+1].y;
-        // Thick line via parallel offsets
         for (int d = -1; d <= 1; d++) {
             SDL_RenderLine(renderer, x1 + d, y1,     x2 + d, y2);
             SDL_RenderLine(renderer, x1,     y1 + d, x2,     y2 + d);
         }
     }
 
-    // Joints as small white squares
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     for (const auto& j : joints) {
         SDL_FRect dot{j.x - 3.0f, j.y - 3.0f, 6.0f, 6.0f};
@@ -55,12 +88,16 @@ void render_arm(SDL_Renderer* renderer, const Arm& arm, bool is_active) {
     }
 }
 
-void render_object(SDL_Renderer* renderer, const Object& obj) {
+void render_object(SDL_Renderer* renderer, const Textures& tex, const Object& obj) {
     SDL_FRect r{obj.x, obj.y, OBJ_W, OBJ_H};
-    SDL_SetRenderDrawColor(renderer, 80, 140, 255, 255);
-    SDL_RenderFillRect(renderer, &r);
-    SDL_SetRenderDrawColor(renderer, 160, 200, 255, 255);
-    SDL_RenderRect(renderer, &r);
+    if (tex.object) {
+        SDL_RenderTexture(renderer, tex.object, nullptr, &r);
+    } else {
+        SDL_SetRenderDrawColor(renderer, 80, 140, 255, 255);
+        SDL_RenderFillRect(renderer, &r);
+        SDL_SetRenderDrawColor(renderer, 160, 200, 255, 255);
+        SDL_RenderRect(renderer, &r);
+    }
 }
 
 void render_ui(SDL_Renderer* renderer, const GameState& gs) {

@@ -2,6 +2,7 @@
 #define SDL_MAIN_USE_CALLBACKS 1
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
+#include <SDL3_image/SDL_image.h>
 #include <algorithm>
 #include "types.h"
 #include "gravity.h"
@@ -15,6 +16,7 @@
 struct AppState {
     SDL_Window*   window   = nullptr;
     SDL_Renderer* renderer = nullptr;
+    Textures tex{};
     GameState gs{};
     Vec2   prev_tip{};
     Uint64 prev_ticks = 0;
@@ -50,6 +52,10 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
     state->gs.level_index = 0;
     state->prev_tip       = arm_tip(state->gs.level.arms[0]);
     state->prev_ticks     = SDL_GetTicks();
+
+    if (!load_textures(state->renderer, state->tex)) {
+        SDL_Log("Warning: some textures failed to load, falling back to solid colours");
+    }
 
     return SDL_APP_CONTINUE;
 }
@@ -141,8 +147,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
     // Render
     SDL_SetRenderDrawColor(state->renderer, 30, 30, 35, 255);
     SDL_RenderClear(state->renderer);
-    render_level(state->renderer, level, gs.won);
-    render_object(state->renderer, obj);
+    render_level(state->renderer, state->tex, level, gs.won);
+    render_object(state->renderer, state->tex, obj);
     render_ui(state->renderer, gs);
     SDL_RenderPresent(state->renderer);
 
@@ -150,5 +156,7 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
 }
 
 void SDL_AppQuit(void* appstate, SDL_AppResult result) {
-    delete static_cast<AppState*>(appstate);
+    auto* state = static_cast<AppState*>(appstate);
+    free_textures(state->tex);
+    delete state;
 }

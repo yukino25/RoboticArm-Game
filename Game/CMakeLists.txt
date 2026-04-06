@@ -11,6 +11,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(SDL3)
 
+FetchContent_Declare(
+    SDL3_image
+    GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git
+    GIT_TAG        release-3.2.4
+)
+FetchContent_MakeAvailable(SDL3_image)
+
 # Game executable
 add_executable(game
     main.cpp
@@ -20,7 +27,7 @@ add_executable(game
     render.cpp
 )
 target_include_directories(game PRIVATE .)
-target_link_libraries(game PRIVATE SDL3::SDL3)
+target_link_libraries(game PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
 
 # Unit tests (no SDL dependency)
 FetchContent_Declare(
