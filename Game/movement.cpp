@@ -151,6 +151,8 @@ void apply_movement(
     }
     if (seg.type == SegmentType::EXTEND || seg.type == SegmentType::BOTH) {
         float safe = clamp_segment_delta(arm, idx, false, delta_extend, tiles, all_arms, moving_arm_idx);
+        // clamp_segment_delta's internal search also applies MIN_SEG_LEN to test geometry,
+        // but it returns a raw delta — apply the floor here on the real length too.
         seg.length = std::max(MIN_SEG_LEN, seg.length + safe);
     }
 }
