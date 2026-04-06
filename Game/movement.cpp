@@ -146,13 +146,16 @@ void apply_movement(
     Segment& seg = arm.segments[idx];
 
     if (seg.type == SegmentType::PIVOT || seg.type == SegmentType::BOTH) {
-        float safe = clamp_segment_delta(arm, idx, true, delta_angle, tiles, all_arms, moving_arm_idx);
+        // Scale angular delta so the tip always moves at the same linear speed:
+        // tip_speed = delta_angle * length = constant => delta_angle = base_speed / length
+        float scaled_angle = delta_angle * MIN_SEG_LEN / seg.length;
+        float safe = clamp_segment_delta(arm, idx, true, scaled_angle, tiles, all_arms, moving_arm_idx);
         seg.angle += safe;
     }
     if (seg.type == SegmentType::EXTEND || seg.type == SegmentType::BOTH) {
         float safe = clamp_segment_delta(arm, idx, false, delta_extend, tiles, all_arms, moving_arm_idx);
         // clamp_segment_delta's internal search also applies MIN_SEG_LEN to test geometry,
-        // but it returns a raw delta — apply the floor here on the real length too.
-        seg.length = std::max(MIN_SEG_LEN, seg.length + safe);
+        // but it returns a raw delta — apply the floor/ceiling here on the real length too.
+        seg.length = std::clamp(seg.length + safe, MIN_SEG_LEN, MAX_SEG_LEN);
     }
 }

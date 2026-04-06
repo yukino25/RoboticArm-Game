@@ -13,6 +13,7 @@ constexpr float EXTEND_SPEED  = 80.0f;    // px/s
 constexpr float TRACK_SPEED   = 100.0f;   // px/s
 constexpr float GRAB_RADIUS   = 12.0f;    // px
 constexpr float MIN_SEG_LEN   = 10.0f;    // px
+constexpr float MAX_SEG_LEN   = 288.0f;   // px (12 tiles)
 constexpr float OBJ_W                        = 20.0f;    // px
 constexpr float OBJ_H                        = 20.0f;    // px
 constexpr int   SEGMENT_COLLISION_ITERATIONS = 8;       // binary search passes per frame

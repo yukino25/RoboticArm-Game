@@ -102,8 +102,9 @@ TEST_CASE("apply_movement: rotates PIVOT segment") {
     Arm arm = make_simple_arm(SegmentType::PIVOT);
     std::vector<Arm> arms{arm};
     apply_movement(arm, 0.5f, 0.0f, 0.0f, s_empty_tiles, arms, 0);
+    // Angle is scaled by MIN_SEG_LEN/length = 10/50 = 0.2 for constant tip speed
     // Tolerance >= delta/2^SEGMENT_COLLISION_ITERATIONS (binary search resolution floor)
-    REQUIRE_THAT(arm.segments[0].angle, Catch::Matchers::WithinAbs(0.5f, 0.01f));
+    REQUIRE_THAT(arm.segments[0].angle, Catch::Matchers::WithinAbs(0.5f * MIN_SEG_LEN / 50.0f, 0.01f));
 }
 
 TEST_CASE("apply_movement: PIVOT ignores delta_extend") {
@@ -132,8 +133,9 @@ TEST_CASE("apply_movement: BOTH responds to angle and length") {
     Arm arm = make_simple_arm(SegmentType::BOTH);
     std::vector<Arm> arms{arm};
     apply_movement(arm, 1.0f, 5.0f, 0.0f, s_empty_tiles, arms, 0);
+    // Angle scaled by MIN_SEG_LEN/length = 10/50 = 0.2 for constant tip speed
     // Tolerances >= delta/2^SEGMENT_COLLISION_ITERATIONS (binary search resolution floor)
-    REQUIRE_THAT(arm.segments[0].angle,  Catch::Matchers::WithinAbs(1.0f,  0.01f));
+    REQUIRE_THAT(arm.segments[0].angle,  Catch::Matchers::WithinAbs(1.0f * MIN_SEG_LEN / 50.0f, 0.01f));
     REQUIRE_THAT(arm.segments[0].length, Catch::Matchers::WithinAbs(55.0f, 0.1f));
 }
 
