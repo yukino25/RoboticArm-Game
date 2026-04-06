@@ -76,6 +76,7 @@ std::optional<Level> load_level(const std::string& path) {
                 else if (type_str == "both")   t = SegmentType::BOTH;
                 else return std::nullopt;
                 current_arm.segments.push_back({t, 0.0f, length});
+            // TODO: add "track min max horizontal" keyword here for track-based arms
             } else {
                 return std::nullopt;
             }
