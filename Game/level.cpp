@@ -26,7 +26,7 @@ Level make_level_1() {
     arm.active_segment = 0;
 
     arm.segments.push_back({SegmentType::PIVOT,  0.0f, 6 * BLOCK_SIZE});
-    arm.segments.push_back({SegmentType::EXTEND, 0.0f, 3 * BLOCK_SIZE});
+    arm.segments.push_back({SegmentType::BOTH,   0.0f, 3 * BLOCK_SIZE});
 
     level.arms.push_back(arm);
     level.active_arm = 0;
