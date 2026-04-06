@@ -1,23 +1,8 @@
 // Game/types.h
 #pragma once
+#include "config.h"
 #include <vector>
 #include <optional>
-
-#define GAME_WIDTH  24U
-#define GAME_HEIGHT 18U
-
-constexpr float BLOCK_SIZE    = 24.0f;
-constexpr float GRAVITY       = 500.0f;   // px/s²
-constexpr float PIVOT_SPEED   = 2.0f;     // rad/s
-constexpr float EXTEND_SPEED  = 80.0f;    // px/s
-constexpr float TRACK_SPEED   = 100.0f;   // px/s
-constexpr float GRAB_RADIUS   = 12.0f;    // px
-constexpr float MIN_SEG_LEN   = 10.0f;    // px
-constexpr float MAX_SEG_LEN   = 288.0f;   // px (12 tiles)
-constexpr float OBJ_W                        = 20.0f;    // px
-constexpr float OBJ_H                        = 20.0f;    // px
-constexpr int   SEGMENT_COLLISION_ITERATIONS = 8;       // binary search passes per frame
-constexpr float ARM_RADIUS                   = 8.0f;    // min distance between joints of different arms (px)
 
 struct Vec2 { float x, y; };
 struct Rect { float x, y, w, h; };
