@@ -18,6 +18,23 @@ bool load_textures(SDL_Renderer* renderer, Textures& out) {
     out.tile   = load_tex(renderer, "assets/tiles/IndustrialTile_26.png");
     out.bg     = load_tex(renderer, "assets/background/Background.png");
     out.object = load_tex(renderer, "assets/objects/Box1.png");
+
+    const char* sizes[4] = { "sm", "md", "lg", "xl" };
+    for (int i = 0; i < 4; i++) {
+        char buf[128];
+        SDL_snprintf(buf, sizeof(buf), "assets/arm/arm_segment_%s_active.png",   sizes[i]);
+        out.arm[i].seg_active   = load_tex(renderer, buf);
+        SDL_snprintf(buf, sizeof(buf), "assets/arm/arm_segment_%s_inactive.png", sizes[i]);
+        out.arm[i].seg_inactive = load_tex(renderer, buf);
+        SDL_snprintf(buf, sizeof(buf), "assets/arm/arm_outer_%s_active.png",     sizes[i]);
+        out.arm[i].outer_active   = load_tex(renderer, buf);
+        SDL_snprintf(buf, sizeof(buf), "assets/arm/arm_outer_%s_inactive.png",   sizes[i]);
+        out.arm[i].outer_inactive = load_tex(renderer, buf);
+        SDL_snprintf(buf, sizeof(buf), "assets/arm/arm_inner_%s.png",            sizes[i]);
+        out.arm[i].inner = load_tex(renderer, buf);
+    }
+    out.grab_suction = load_tex(renderer, "assets/arm/arm_grab_suction.png");
+
     return out.tile && out.bg && out.object;
 }
 
@@ -25,6 +42,14 @@ void free_textures(Textures& t) {
     SDL_DestroyTexture(t.tile);
     SDL_DestroyTexture(t.bg);
     SDL_DestroyTexture(t.object);
+    for (int i = 0; i < 4; i++) {
+        SDL_DestroyTexture(t.arm[i].seg_active);
+        SDL_DestroyTexture(t.arm[i].seg_inactive);
+        SDL_DestroyTexture(t.arm[i].outer_active);
+        SDL_DestroyTexture(t.arm[i].outer_inactive);
+        SDL_DestroyTexture(t.arm[i].inner);
+    }
+    SDL_DestroyTexture(t.grab_suction);
     t = {};
 }
 
