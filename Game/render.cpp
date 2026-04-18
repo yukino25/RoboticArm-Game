@@ -90,11 +90,10 @@ void render_level(SDL_Renderer* renderer, const Textures& tex, const Level& leve
 }
 
 static int arm_size_index(float len) {
-    if (len == 32.0f) return 0;
-    if (len == 48.0f) return 1;
-    if (len == 64.0f) return 2;
-    if (len == 80.0f) return 3;
-    return -1;
+    if (len < 40.0f) return 0;   // sm  (up to ~32px)
+    if (len < 56.0f) return 1;   // md  (up to ~48px)
+    if (len < 72.0f) return 2;   // lg  (up to ~64px)
+    return 3;                     // xl  (80px+)
 }
 
 void render_arm(SDL_Renderer* renderer, const Textures& tex,
@@ -138,13 +137,12 @@ void render_arm(SDL_Renderer* renderer, const Textures& tex,
                 SDL_RenderLine(renderer, j0.x, j0.y, j1.x, j1.y);
                 continue;
             }
-            int esi = si;
-            float ow = 48.0f + esi * 16.0f;
-            float iw = 48.0f + esi * 16.0f;
+            float sw = 48.0f + si * 16.0f;   // sprite width for this size tier
+            float ow = sw, iw = sw;
             float oh = 20.0f;
             float ih = 12.0f;
 
-            SDL_Texture* ti = tex.arm[esi].inner;
+            SDL_Texture* ti = tex.arm[si].inner;
             if (ti) {
                 SDL_FRect dst_i = { j1.x, j1.y - ih * 0.5f, iw, ih };
                 SDL_FPoint cen_i = { 0.0f, ih * 0.5f };
@@ -153,8 +151,8 @@ void render_arm(SDL_Renderer* renderer, const Textures& tex,
             }
 
             SDL_Texture* to = selected
-                ? tex.arm[esi].outer_active
-                : tex.arm[esi].outer_inactive;
+                ? tex.arm[si].outer_active
+                : tex.arm[si].outer_inactive;
             if (to) {
                 SDL_FRect dst_o = { j0.x, j0.y - oh * 0.5f, ow, oh };
                 SDL_FPoint cen_o = { 0.0f, oh * 0.5f };
@@ -163,6 +161,8 @@ void render_arm(SDL_Renderer* renderer, const Textures& tex,
             }
         }
     }
+
+    if (joints.size() < 2) return;
 
     if (tex.grab_suction) {
         const Vec2& tip = joints.back();
