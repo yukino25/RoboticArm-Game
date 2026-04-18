@@ -36,7 +36,7 @@ bool load_textures(SDL_Renderer* renderer, Textures& out) {
     }
     out.grab_suction = load_tex(renderer, "assets/arm/arm_grab_suction.png");
 
-    return out.tile && out.bg && out.object;
+    return out.tile && out.bg && out.object && out.arm[0].seg_active && out.grab_suction;
 }
 
 void free_textures(Textures& t) {
@@ -133,7 +133,12 @@ void render_arm(SDL_Renderer* renderer, const Textures& tex,
             SDL_RenderTextureRotated(renderer, t, nullptr, &dst,
                                      angle_deg, &cen, SDL_FLIP_NONE);
         } else {
-            int esi = (si >= 0) ? si : 0;
+            if (si < 0) {
+                SDL_SetRenderDrawColor(renderer, 200, 50, 50, 255);
+                SDL_RenderLine(renderer, j0.x, j0.y, j1.x, j1.y);
+                continue;
+            }
+            int esi = si;
             float ow = 48.0f + esi * 16.0f;
             float iw = 48.0f + esi * 16.0f;
             float oh = 20.0f;
