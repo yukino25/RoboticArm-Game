@@ -20,13 +20,13 @@ tiles:
 ########################
 
 arm:
-base 32 288
+base 64 288
 angle 0
-segment pivot 192
-segment both 96
+segment pivot 64
+segment both 64
 
 object:
-pos 384 396
+pos 320 380
 
 target:
-pos 576 512 96 32
+pos 480 512 64 32
