@@ -4,6 +4,7 @@
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
 #include <algorithm>
+#include <filesystem>
 #include "types.h"
 #include "gravity.h"
 #include "movement.h"
@@ -42,6 +43,13 @@ static void load_game_level(AppState* state, int idx) {
 
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
     SDL_SetAppMetadata("Robotic Arm Game", "0.1", "com.example.robotic-arm");
+
+    // Ensure relative asset paths work regardless of how/where the exe is launched.
+    const char* base = SDL_GetBasePath();
+    if (base) {
+        std::error_code ec;
+        std::filesystem::current_path(base, ec);
+    }
 
     if (!SDL_Init(SDL_INIT_VIDEO)) {
         SDL_Log("SDL_Init failed: %s", SDL_GetError());

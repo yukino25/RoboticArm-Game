@@ -69,6 +69,21 @@ cp "$SDL3I_X64/bin/SDL3_image.dll"   "$OUT_DIR/"
 cp -r "$GAME_DIR/assets"             "$OUT_DIR/assets"
 cp -r "$GAME_DIR/levels"             "$OUT_DIR/levels"
 
+cat > "$OUT_DIR/README.txt" << 'EOF'
+Robotic Arm Game
+================
+1. Extract this entire folder before running (do not run game.exe from inside the zip).
+2. Double-click game.exe to play.
+
+Controls:
+  A / D       — rotate arm
+  W / S       — extend / retract arm / move track
+  Q / E       — switch active arm
+  Space       — grab / release object
+  R           — restart level
+  Escape      — menu
+EOF
+
 # ── Zip ───────────────────────────────────────────────────────────────────────
 rm -f "$ZIP"
 cd "$REPO_ROOT"
