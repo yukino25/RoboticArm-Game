@@ -11,11 +11,10 @@ constexpr float BLOCK_SIZE   = 32.0f;   // px per tile
 constexpr float GRAVITY      = 500.0f;  // px/s²
 
 // ---- Arm movement --------------------------------------------------------
-constexpr float PIVOT_SPEED  = 2.0f;    // rad/s (at MIN_SEG_LEN; longer segments rotate slower)
+constexpr float PIVOT_SPEED  = 7.0f;    // rad/s (at MIN_SEG_LEN; longer segments rotate slower)
 constexpr float EXTEND_SPEED = 80.0f;   // px/s
 constexpr float TRACK_SPEED  = 100.0f;  // px/s
-constexpr float MIN_SEG_LEN  = 10.0f;   // px — shortest an extendable segment can be
-constexpr float MAX_SEG_LEN  = 384.0f;  // px — longest an extendable segment can be (12 tiles)
+constexpr float MIN_SEG_LEN  = 10.0f;   // px — safety floor (per-segment max_length governs actual limit)
 
 // ---- Grab / interaction --------------------------------------------------
 constexpr float GRAB_RADIUS  = 12.0f;   // px — how close the tip must be to grab an object

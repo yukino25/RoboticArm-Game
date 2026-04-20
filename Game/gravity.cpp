@@ -23,6 +23,18 @@ Vec2 arm_tip(const Arm& arm) {
     return compute_fk(arm).back();
 }
 
+Vec2 grabber_tip(const Arm& arm) {
+    auto joints = compute_fk(arm);
+    const Vec2& tip = joints.back();
+    if (joints.size() < 2) return tip;
+    float dx = tip.x - joints[joints.size() - 2].x;
+    float dy = tip.y - joints[joints.size() - 2].y;
+    float len = std::sqrt(dx * dx + dy * dy);
+    if (len < 0.001f) return tip;
+    constexpr float PAD_OFFSET = 14.0f;
+    return {tip.x + dx / len * PAD_OFFSET, tip.y + dy / len * PAD_OFFSET};
+}
+
 void update_object(Object& obj, float dt) {
     if (obj.grabbed) return;
     obj.vy += GRAVITY * dt;
@@ -45,8 +57,8 @@ void resolve_tile_collision(Object& obj, const TileType* tiles, float obj_w, flo
 
         int tx0 = std::max(0, (int)(left   / BLOCK_SIZE));
         int ty0 = std::max(0, (int)(top    / BLOCK_SIZE));
-        int tx1 = std::min((int)GAME_WIDTH  - 1, (int)((right  - 1.0f) / BLOCK_SIZE));
-        int ty1 = std::min((int)GAME_HEIGHT - 1, (int)((bottom - 1.0f) / BLOCK_SIZE));
+        int tx1 = std::min((int)GAME_WIDTH  - 1, (int)(right  / BLOCK_SIZE));
+        int ty1 = std::min((int)GAME_HEIGHT - 1, (int)(bottom / BLOCK_SIZE));
 
         bool any = false;
         for (int ty = ty0; ty <= ty1; ty++) {
@@ -79,11 +91,11 @@ void resolve_tile_collision(Object& obj, const TileType* tiles, float obj_w, flo
 }
 
 bool can_grab(const Object& obj, const Arm& arm) {
-    Vec2 tip = arm_tip(arm);
+    Vec2 pad = grabber_tip(arm);
     float cx = obj.x + OBJ_W / 2;
     float cy = obj.y + OBJ_H / 2;
-    float dx = tip.x - cx;
-    float dy = tip.y - cy;
+    float dx = pad.x - cx;
+    float dy = pad.y - cy;
     return dx * dx + dy * dy <= GRAB_RADIUS * GRAB_RADIUS;
 }
 

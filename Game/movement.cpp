@@ -37,16 +37,32 @@ void cycle_selection(GameState& gs, int direction) {
     }
 }
 
-// Returns true if any joint of `arm` overlaps a solid tile.
+// Returns true if a world point falls inside a solid tile.
+static bool point_in_solid(float x, float y, const TileType* tiles) {
+    int tx = (int)(x / BLOCK_SIZE);
+    int ty = (int)(y / BLOCK_SIZE);
+    if (tx < 0 || ty < 0 || tx >= (int)GAME_WIDTH || ty >= (int)GAME_HEIGHT)
+        return false; // out-of-bounds allowed (arm can poke outside world edge)
+    return tiles[ty * GAME_WIDTH + tx] == TileType::SOLID;
+}
+
+// Returns true if any part of the arm (joints + segment bodies) overlaps a solid tile.
 static bool joints_hit_tiles(const Arm& arm, const TileType* tiles) {
     auto joints = compute_fk(arm);
-    for (const auto& j : joints) {
-        int tx = (int)(j.x / BLOCK_SIZE);
-        int ty = (int)(j.y / BLOCK_SIZE);
-        if (tx < 0 || ty < 0 || tx >= (int)GAME_WIDTH || ty >= (int)GAME_HEIGHT)
-            continue; // out-of-bounds joints are allowed (arm can poke outside world edge)
-        if (tiles[ty * GAME_WIDTH + tx] == TileType::SOLID)
-            return true;
+    for (int i = 0; i < (int)joints.size(); i++) {
+        if (point_in_solid(joints[i].x, joints[i].y, tiles)) return true;
+        if (i + 1 < (int)joints.size()) {
+            float dx = joints[i+1].x - joints[i].x;
+            float dy = joints[i+1].y - joints[i].y;
+            float len = std::sqrt(dx*dx + dy*dy);
+            // Sample at half-tile intervals so no tile can be skipped
+            int steps = std::max(2, (int)(len / (BLOCK_SIZE * 0.5f)) + 1);
+            for (int s = 1; s < steps; s++) {
+                float t = (float)s / steps;
+                if (point_in_solid(joints[i].x + dx*t, joints[i].y + dy*t, tiles))
+                    return true;
+            }
+        }
     }
     return false;
 }
@@ -76,7 +92,7 @@ float clamp_segment_delta(
     auto apply_delta = [&](Arm a, float d) -> Arm {
         if (seg_idx >= 0 && seg_idx < (int)a.segments.size()) {
             if (is_angle) a.segments[seg_idx].angle  += sign * d;
-            else          a.segments[seg_idx].length  = std::max(MIN_SEG_LEN, a.segments[seg_idx].length + sign * d);
+            else          a.segments[seg_idx].length  = std::max(a.segments[seg_idx].min_length, a.segments[seg_idx].length + sign * d);
         }
         return a;
     };
@@ -156,6 +172,6 @@ void apply_movement(
         float safe = clamp_segment_delta(arm, idx, false, delta_extend, tiles, all_arms, moving_arm_idx);
         // clamp_segment_delta's internal search also applies MIN_SEG_LEN to test geometry,
         // but it returns a raw delta — apply the floor/ceiling here on the real length too.
-        seg.length = std::clamp(seg.length + safe, MIN_SEG_LEN, MAX_SEG_LEN);
+        seg.length = std::clamp(seg.length + safe, seg.min_length, seg.max_length);
     }
 }

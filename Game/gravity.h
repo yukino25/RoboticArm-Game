@@ -5,8 +5,11 @@
 // Returns n+1 joint positions: joints[0]=base, joints[n]=tip
 std::vector<Vec2> compute_fk(const Arm& arm);
 
-// Convenience: returns arm tip position
+// Convenience: returns arm tip position (last joint)
 Vec2 arm_tip(const Arm& arm);
+
+// Returns the rubber-pad centre of the suction grabber (14px past the last joint)
+Vec2 grabber_tip(const Arm& arm);
 
 // Integrate gravity + velocity for one frame. Does nothing if obj.grabbed.
 void update_object(Object& obj, float dt);
@@ -14,7 +17,7 @@ void update_object(Object& obj, float dt);
 // Resolve object AABB against solid tiles. Modifies obj pos/vel.
 void resolve_tile_collision(Object& obj, const TileType* tiles, float obj_w, float obj_h);
 
-// True when object center is within GRAB_RADIUS of arm tip
+// True when object center is within GRAB_RADIUS of the grabber tip
 bool can_grab(const Object& obj, const Arm& arm);
 
 // Set grabbed=true, zero velocity

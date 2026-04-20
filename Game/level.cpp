@@ -75,7 +75,19 @@ std::optional<Level> load_level(const std::string& path) {
                 else if (type_str == "extend") t = SegmentType::EXTEND;
                 else if (type_str == "both")   t = SegmentType::BOTH;
                 else return std::nullopt;
-                current_arm.segments.push_back({t, 0.0f, length});
+                // EXTEND/BOTH: start extended so j1 clears the outer sleeve.
+                // max_length = 2 × sprite_width so inner/outer sprites just meet at max.
+                // sprite_width per tier (sm/md/lg/xl) = 48 + tier*16.
+                float start_len = (t != SegmentType::PIVOT) ? length + 24.0f : length;
+                float max_len   = length; // pivots don't extend
+                if (t != SegmentType::PIVOT) {
+                    float sw = (length < 40.0f) ? 48.0f
+                             : (length < 56.0f) ? 64.0f
+                             : (length < 72.0f) ? 80.0f
+                             :                    96.0f;
+                    max_len = 2.0f * sw;
+                }
+                current_arm.segments.push_back({t, 0.0f, start_len, length, start_len, max_len});
             // TODO: add "track min max horizontal" keyword here for track-based arms
             } else {
                 return std::nullopt;

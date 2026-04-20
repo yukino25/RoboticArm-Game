@@ -12,8 +12,11 @@ enum class TileType    { EMPTY, SOLID };
 
 struct Segment {
     SegmentType type;
-    float angle;   // radians, relative to parent segment
-    float length;  // pixels
+    float angle;        // radians, relative to parent segment
+    float length;       // pixels (current, changes as arm extends/retracts)
+    float base_length;  // pixels (from level file, used for sprite tier selection)
+    float min_length;   // pixels (minimum retractable length = start_len at load)
+    float max_length;   // pixels (maximum extension; sprites separate beyond 2×sprite_width)
 };
 
 struct Track {
