@@ -52,7 +52,6 @@ x86_64-w64-mingw32-g++ -std=c++17 -O2 \
     -L"$SDL3_X64/lib" -L"$SDL3I_X64/lib" \
     -lSDL3 -lSDL3_image \
     -static-libgcc -static-libstdc++ \
-    -Wl,-Bstatic -lpthread -Wl,-Bdynamic \
     -mwindows \
     -o "$WORK_DIR/game.exe"
 
@@ -61,9 +60,12 @@ echo "==> Packaging..."
 rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
 
+PTHREAD_DLL="$(find /opt/homebrew -path "*/toolchain-x86_64/*/bin/libwinpthread-1.dll" | head -1)"
+
 cp "$WORK_DIR/game.exe"              "$OUT_DIR/"
 cp "$SDL3_X64/bin/SDL3.dll"          "$OUT_DIR/"
 cp "$SDL3I_X64/bin/SDL3_image.dll"   "$OUT_DIR/"
+cp "$PTHREAD_DLL"                    "$OUT_DIR/"
 cp -r "$GAME_DIR/assets"             "$OUT_DIR/assets"
 cp -r "$GAME_DIR/levels"             "$OUT_DIR/levels"
 
