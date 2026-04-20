@@ -52,6 +52,7 @@ x86_64-w64-mingw32-g++ -std=c++17 -O2 \
     -L"$SDL3_X64/lib" -L"$SDL3I_X64/lib" \
     -lSDL3 -lSDL3_image \
     -static-libgcc -static-libstdc++ \
+    -Wl,-Bstatic -lpthread -Wl,-Bdynamic \
     -mwindows \
     -o "$WORK_DIR/game.exe"
 
