@@ -29,6 +29,17 @@ add_executable(game
 target_include_directories(game PRIVATE .)
 target_link_libraries(game PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
 
+# Symlink assets and levels into the build dir so the binary can find them
+# regardless of working directory (SDL_GetBasePath chdir in main.cpp).
+foreach(LINK assets levels)
+    add_custom_command(TARGET game POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E create_symlink
+            "${CMAKE_SOURCE_DIR}/${LINK}"
+            "$<TARGET_FILE_DIR:game>/${LINK}"
+        COMMENT "Symlinking ${LINK} into build dir"
+    )
+endforeach()
+
 # Unit tests (no SDL dependency)
 FetchContent_Declare(
     Catch2
