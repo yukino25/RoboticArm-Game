@@ -44,6 +44,7 @@ SDL3I_X64="$SDL3I_EXTRACT/x86_64-w64-mingw32"
 # ── Cross-compile ─────────────────────────────────────────────────────────────
 echo "==> Compiling for Windows x64..."
 cd "$GAME_DIR"
+MINGW_BIN="/opt/homebrew/Cellar/mingw-w64/14.0.0/toolchain-x86_64/x86_64-w64-mingw32/bin"
 MINGW_LIB="/opt/homebrew/Cellar/mingw-w64/14.0.0/toolchain-x86_64/x86_64-w64-mingw32/lib"
 
 x86_64-w64-mingw32-g++ -std=c++17 -O2 \
@@ -66,6 +67,7 @@ mkdir -p "$OUT_DIR"
 cp "$WORK_DIR/game.exe"              "$OUT_DIR/"
 cp "$SDL3_X64/bin/SDL3.dll"          "$OUT_DIR/"
 cp "$SDL3I_X64/bin/SDL3_image.dll"   "$OUT_DIR/"
+cp "$MINGW_BIN/libwinpthread-1.dll"  "$OUT_DIR/"
 cp -r "$GAME_DIR/assets"             "$OUT_DIR/assets"
 cp -r "$GAME_DIR/levels"             "$OUT_DIR/levels"
 
